@@ -1,5 +1,14 @@
 
 
+.stepsContainer {
+  height: 300px;
+  overflow-y: scroll
+}
+.stepsContainer h2 {
+  color: #252D60;
+text-transform: uppercase;
+font-weight: 300;
+}
 
 .perfilador {
   text-transform: uppercase;
@@ -78,7 +87,7 @@
     border-radius: 1000px;
     width: 20px;
     height: 20px;
-    background-color: #56ace9;
+    background-color: #298DF5;
     display: block;
     margin: 0;
     border-bottom: 1px solid #43a9f2;
@@ -91,7 +100,7 @@
     width: 100%;
     height: 3px;
     content: '';
-    background-color: #56ace9;
+    background-color: #298DF5;
 }
 
 .progress-indicator .bubble i {
@@ -130,11 +139,11 @@
 }
 
 .progress-indicator>li.active, .progress-indicator>li.active .bubble {
-    color: #337AB7
+    color: #298DF5;
 }
 
 .progress-indicator>li.active .bubble, .progress-indicator>li.active .bubble:after, .progress-indicator>li.active .bubble:before {
-    background-color: #337AB7;
+    background-color: #298DF5;
     border-color: #122a3f
 }
 
@@ -198,6 +207,14 @@
     line-height: 1.2em;
 }
 
+.progress-indicator.stacked .stacked-text .step.active {
+  font-weight: 600;
+}
+
+.progress-indicator.stacked .stacked-text span.substep.active{
+  font-weight: 600;
+}
+
 .progress-indicator.stacked .stacked-text span.substep {
   margin: 20px 0;
   display: flex;
@@ -205,27 +222,32 @@
   font-size: 13px;
 }
 
-.progress-indicator.stacked .active .stacked-text span.substep:before,
-.progress-indicator.stacked .completed .stacked-text span.substep:before {
+.progress-indicator.stacked .active .stacked-text span.substep:before {
   content: '';
 width: 11px;
 height: 11px;
 border-radius: 50%;
 position: absolute;
 left: -33px;
-background: #005398;
+background: #298DF5;
 z-index: 100;
   }
 
-  .progress-indicator.stacked .stacked-text span.substep:before {
+  .progress-indicator.stacked .completed .stacked-text span.substep:before {
     content: '';
   width: 11px;
   height: 11px;
   border-radius: 50%;
   position: absolute;
   left: -33px;
-  background: #56ace9;
   z-index: 100;
+    background: #005398;
+  }
+
+  .progress-indicator.stacked .stacked-text span.substep:before {
+
+  background: #298DF5;
+
 }
 
 
@@ -249,6 +271,7 @@ z-index: 100;
 }
 
 .mat-label {
+  text-transform: uppercase;
   display: block;
   font-size: 16px;
   transform: translateY(25px);
@@ -264,6 +287,11 @@ z-index: 100;
   outline: none;
   padding: 8px 0;
   font-size: 16px;
+  color: #2E466D;
+    text-transform: uppercase;
+    font-style: italic;
+    font-weight: 100;
+    letter-spacing: 1.1;
 }
 
 .mat-div {
@@ -284,7 +312,7 @@ z-index: 100;
 }
 
 .mat-div::after {
-  background-color: #56ace9;
+  background-color: #298DF5;
   transform: scaleX(0);
 }
 
@@ -293,7 +321,7 @@ z-index: 100;
 }
 
 .is-active .mat-label {
-  color: #56ace9;
+  color: #298DF5;
 }
 
 .is-completed .mat-label {
@@ -312,6 +340,7 @@ select {
   border: none;
   border-bottom: 2px solid #005398;
   border-radius: 0;
+  text-transform: uppercase;
 }
 
 /* Remove focus */
@@ -322,6 +351,7 @@ select:focus {
 /* Hide label */
 .mdl-selectfield label {
   display: none;
+  color: #9DA2BE;
 }
 
 /* Use custom arrow */
@@ -348,6 +378,108 @@ select:focus {
   border-right: .25em solid transparent;
   border-top: 0.375em solid #005398;
   pointer-events: none;
+}
+
+/* OFERTAS */
+.promos {
+  padding-top: 32px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.promo {
+  margin: 1em .5em 1.625em;
+
+  padding: 7px 0px 0px;
+  background: #005398;
+  font-weight: 400;
+  line-height: 1.625;
+  color: #6B7C8D;
+  text-align: center;
+}
+@media (min-width: 40em) {
+  .promo {
+    display: inline;
+    float: left;
+    width: 33.333%;
+    margin: 1em 0 0;
+  }
+  .promo.first {
+    border-right: none;
+  }
+  .promo.second {
+    float: right;
+    border-left: none;
+  }
+}
+.promo h4 {
+  margin: .10em 0 0;
+  font-size: 130%;
+  font-weight: 100;
+  text-transform: uppercase;
+  color: white;
+}
+.promo .features {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  color: #999999;
+  background-color: white;
+}
+.promo li {
+  padding: .15em 0;
+}
+
+.promo li.requisitos {
+  font-size: 10px;
+}
+.promo li h6 {
+  color: #252D60;
+  font-weight: 100;
+  padding-top: 10px;
+border-top: 1px solid gray;
+}
+.promo .brief {
+  color: #f9f9f9;
+  background: #005398;
+  font-size: 1.5em;
+}
+.promo .price {
+    margin: -0.1em 0;
+    padding: 9px;
+    background: white;
+    font-size: 250%;
+    color: #005398;
+}
+.promo .buy {
+  margin: 1em 0 0;
+}
+.promo button {
+  padding: 1em 3.25em;
+  border: none;
+  background: #4990E2;
+  color: #f9f9f9;
+  cursor: pointer;
+      margin-bottom: 15px;
+}
+.promo button:hover {
+  background: #4990E2;
+}
+
+.scale button {
+  background: #4990E2;
+}
+.scale button:hover {
+  background: #4990E2;
+}
+@media (min-width: 40em) {
+  .scale {
+    transform: scale(1.2);
+    box-shadow: 0 0 4px 1px rgba(20, 20, 20, 0.8);
+  }
+  .scale .price {
+    color: #005398;
+  }
 }
 
 
