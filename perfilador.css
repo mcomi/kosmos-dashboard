@@ -1,0 +1,359 @@
+
+
+
+.perfilador {
+  text-transform: uppercase;
+}
+
+.font20 {
+  font-size: 16px;
+}
+.flexer, .progress-indicator {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex
+}
+
+.no-flexer, .progress-indicator.stacked {
+    display: block
+}
+
+.no-flexer-element {
+    -ms-flex: 0;
+    -webkit-flex: 0;
+    -moz-flex: 0;
+    flex: 0
+}
+
+.flexer-element, .progress-indicator>li {
+    -ms-flex: 1;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    flex: 1
+}
+
+.progress-indicator {
+    margin: 7px 14px 2em;
+    padding: 0;
+    font-size: 90%;
+    text-transform: uppercase
+}
+
+.progress-indicator>li {
+    list-style: none;
+    text-align: center;
+    width: auto;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    text-overflow: ellipsis;
+    color: #bbb;
+    display: block
+}
+
+.progress-indicator>li:hover {
+    color: #6f6f6f
+}
+
+.progress-indicator>li.active .bubble{
+  color: #005398;
+}
+
+.progress-indicator>li.completed, .progress-indicator>li.completed .bubble {
+    color: #005398;
+}
+
+.progress-indicator>li .bubble span {
+  color: white;
+  margin-left: 10px;
+}
+
+.progress-indicator>li.completed .bubble span{
+  display: none;
+}
+
+.progress-indicator>li .bubble {
+    border-radius: 1000px;
+    width: 20px;
+    height: 20px;
+    background-color: #56ace9;
+    display: block;
+    margin: 0;
+    border-bottom: 1px solid #43a9f2;
+}
+
+.progress-indicator>li .bubble:after, .progress-indicator>li .bubble:before {
+    display: block;
+    position: absolute;
+    top: 16px;
+    width: 100%;
+    height: 3px;
+    content: '';
+    background-color: #56ace9;
+}
+
+.progress-indicator .bubble i {
+  display: none;
+  color: white;
+  top: 3px;
+  left: 5px;
+  position: relative;
+  z-index: 2;
+}
+
+.progress-indicator .completed .bubble i {
+  display: block;
+}
+
+.progress-indicator>li.completed .bubble, .progress-indicator>li.completed .bubble:after, .progress-indicator>li.completed .bubble:before {
+    background-color: #005398;
+    border-color: #1a6aac
+}
+
+.progress-indicator>li .bubble:before {
+    left: 0
+}
+
+.progress-indicator>li .bubble:after {
+    right: 0
+}
+
+.progress-indicator>li:first-child .bubble:after, .progress-indicator>li:first-child .bubble:before {
+    width: 50%;
+    margin-left: 50%
+}
+
+.progress-indicator>li:last-child .bubble:after, .progress-indicator>li:last-child .bubble:before {
+    display: none;
+}
+
+.progress-indicator>li.active, .progress-indicator>li.active .bubble {
+    color: #337AB7
+}
+
+.progress-indicator>li.active .bubble, .progress-indicator>li.active .bubble:after, .progress-indicator>li.active .bubble:before {
+    background-color: #337AB7;
+    border-color: #122a3f
+}
+
+.progress-indicator>li a:hover .bubble, .progress-indicator>li a:hover .bubble:after, .progress-indicator>li a:hover .bubble:before {
+    background-color: #5671d0;
+    border-color: #1f306e
+}
+
+.progress-indicator>li a:hover .bubble {
+    color: #5671d0
+}
+
+.progress-indicator>li.danger .bubble, .progress-indicator>li.danger .bubble:after, .progress-indicator>li.danger .bubble:before {
+    background-color: #d3140f;
+    border-color: #440605
+}
+
+.progress-indicator>li.danger .bubble {
+    color: #d3140f
+}
+
+.progress-indicator>li.warning .bubble, .progress-indicator>li.warning .bubble:after, .progress-indicator>li.warning .bubble:before {
+    background-color: #edb10a;
+    border-color: #5a4304
+}
+
+.progress-indicator>li.warning .bubble {
+    color: #edb10a
+}
+
+.progress-indicator>li.info .bubble, .progress-indicator>li.info .bubble:after, .progress-indicator>li.info .bubble:before {
+    background-color: #5b32d6;
+    border-color: #25135d
+}
+
+.progress-indicator>li.info .bubble {
+    color: #5b32d6
+}
+
+.progress-indicator.stacked>li {
+    text-indent: -10px;
+    text-align: center;
+    display: block
+}
+
+.progress-indicator.stacked>li .bubble:after, .progress-indicator.stacked>li .bubble:before {
+    left: 10px;
+    margin-left: -1.5px;
+    width: 3px;
+    height: 100%
+}
+
+.progress-indicator.stacked .stacked-text {
+    position: relative;
+    z-index: 10;
+    top: -17px;
+    margin-left: 0;
+    width: 67%!important;
+    display: inline-block;
+    text-align: left;
+    line-height: 1.2em;
+}
+
+.progress-indicator.stacked .stacked-text span.substep {
+  margin: 20px 0;
+  display: flex;
+  text-transform: capitalize;
+  font-size: 13px;
+}
+
+.progress-indicator.stacked .active .stacked-text span.substep:before,
+.progress-indicator.stacked .completed .stacked-text span.substep:before {
+  content: '';
+width: 11px;
+height: 11px;
+border-radius: 50%;
+position: absolute;
+left: -33px;
+background: #005398;
+z-index: 100;
+  }
+
+  .progress-indicator.stacked .stacked-text span.substep:before {
+    content: '';
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  position: absolute;
+  left: -33px;
+  background: #56ace9;
+  z-index: 100;
+}
+
+
+.progress-indicator.stacked>li a {
+    border: none
+}
+
+.progress-indicator.stacked.nocenter>li .bubble {
+    margin-left: 0;
+    margin-right: 0
+}
+
+.progress-indicator.stacked.nocenter>li .bubble:after, .progress-indicator.stacked.nocenter>li .bubble:before {
+    left: 10px
+}
+
+.progress-indicator.stacked.nocenter .stacked-text {
+    width: auto!important;
+    display: block;
+    margin-left: 40px!important
+}
+
+.mat-label {
+  display: block;
+  font-size: 16px;
+  transform: translateY(25px);
+  color: #005398;
+  transition: all 0.5s;
+}
+
+.mat-input {
+  position: relative;
+  background: transparent;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 8px 0;
+  font-size: 16px;
+}
+
+.mat-div {
+  padding: 19px 0 0 0;
+  position: relative;
+}
+
+.mat-div:after, .mat-div:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 95%;
+  height: 2px;
+  background-color: #005398;
+  bottom: 0;
+  left: 0;
+  transition: all 0.5s;
+}
+
+.mat-div::after {
+  background-color: #56ace9;
+  transform: scaleX(0);
+}
+
+.is-active::after {
+  transform: scaleX(1);
+}
+
+.is-active .mat-label {
+  color: #56ace9;
+}
+
+.is-completed .mat-label {
+  font-size: 12px;
+  transform: translateY(0);
+}
+
+select {
+  font-family: inherit;
+  background-color: transparent;
+  width: 95%;
+  padding: 4px 0;
+  font-size: 16px;
+  font-weight: 100;
+  color: #005398;
+  border: none;
+  border-bottom: 2px solid #005398;
+  border-radius: 0;
+}
+
+/* Remove focus */
+select:focus {
+  outline: none;
+}
+
+/* Hide label */
+.mdl-selectfield label {
+  display: none;
+}
+
+/* Use custom arrow */
+.mdl-selectfield select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.mdl-selectfield {
+  position: relative;
+  padding-top: 43px;
+}
+.mdl-selectfield:after {
+  position: absolute;
+  top: 3.75em;
+  right: 0.5em;
+  /* Styling the down arrow */
+  width: 0;
+  height: 0;
+  padding: 0;
+  content: '';
+  border-left: .25em solid transparent;
+  border-right: .25em solid transparent;
+  border-top: 0.375em solid #005398;
+  pointer-events: none;
+}
+
+
+
+@media handheld, screen and (max-width:400px) {
+    .progress-indicator {
+        font-size: 60%
+    }
+}

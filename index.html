@@ -1,0 +1,482 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link href="./Dashboard_files/bootstrap.css" type="text/css" media="screen, projection" dir="css" file="bootstrap.css" title="text/css" rel="stylesheet">
+
+    <link href="./Dashboard_files/formulario.css" type="text/css" media="screen, projection" dir="css" file="formulario.css" title="text/css" rel="stylesheet">
+
+    <link rel="stylesheet" href="./Dashboard_files/font-awesome.min.css">
+    <link rel="shortcut icon" href="https://micreditolibertad.com/assets/favicon-d41f6efde5ed04b42793015b8e69e714.ico" type="image/x-icon">
+    <link href="./Dashboard_files/sweetalert.css" type="text/css" media="screen, projection" dir="css" file="sweetalert.css" title="text/css" rel="stylesheet">
+
+    <link href="./Dashboard_files/select2.min.css" type="text/css" media="screen, projection" dir="css" file="select2.min.css" title="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="default.css">
+    <link rel="stylesheet" href="default.date.css">
+
+    <link href="./Dashboard_files/spectrum.css" type="text/css" media="screen, projection" dir="css" file="spectrum.css" title="text/css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="perfilador.css">
+    <link rel="stylesheet" href="./Dashboard_files/libertad.css">
+
+    <script async="" src="./Dashboard_files/analytics.js"></script>
+    <script src="./Dashboard_files/jquery-3.0.0.min.js" type="text/javascript" dir="js" file="jquery-3.0.0.min.js"></script>
+
+    <script src="./Dashboard_files/sweetalert.min.js" type="text/javascript" dir="js" file="sweetalert.min.js"></script>
+
+    <script src="./Dashboard_files/dropzone.js" type="text/javascript" dir="js" file="dropzone.js"></script>
+
+    <script src="./Dashboard_files/spectrum.js" type="text/javascript" dir="js" file="spectrum.js"></script>
+
+    <script src="./Dashboard_files/dateFormat.min.js" type="text/javascript" dir="js" file="dateFormat.min.js"></script>
+
+    <script src="./Dashboard_files/dashboard.js" type="text/javascript" dir="js" file="dashboard.js"></script>
+
+    <script src="./Dashboard_files/select2.min.js" type="text/javascript" dir="js" file="select2.min.js"></script>
+
+
+
+    <link href="./Dashboard_files/jquery-ui-kosmos.css" type="text/css" rel="stylesheet" media="screen, projection" dir="css" file="jquery-ui-kosmos.css">
+
+    <script src="./Dashboard_files/jquery-ui-kosmos.js" type="text/javascript" dir="js" file="jquery-ui-kosmos.js"></script>
+
+    <script src="./Dashboard_files/googleanalytics.js" type="text/javascript" dir="js" file="googleanalytics.js"></script>
+
+    <script src="./Dashboard_files/chosen.jquery.js"></script>
+
+    <meta name="layout" content="dashboard">
+
+
+
+</head>
+
+<body>
+    <header class="appHeader" style="border-top: solid 5px #ffcb00; background-color: #005398;">
+        <div class="container clearFix">
+            <img class="logo dashboard floatLeft desktop" src="./Dashboard_files/logo.png" alt="Logo" title="Logo">
+            <img class="logoMobile dashboard floatLeft mobile tablet" src="./Dashboard_files/kosmos-mobile-logo.png" alt="Logo" title="Logo">
+            <div class="floatingHeader floatRight clearFix">
+                <div class="floatRight clearFix">
+                    <div class="clearFix floatLeft ">
+                        <img class="userPicture dashboard floatLeft" src="./Dashboard_files/profile.png">
+                    </div>
+                    <p class="userName dashboard floatLeft">Hola Joseph </p>
+                    <div class="dropBox floatLeft marginTop20 marginLeft5 desktop">
+                        <i class="fa fa-angle-down paddingTop4 paddingRight5 paddingLeft5 dropbtn" aria-hidden="true" onclick="mostrarOpciones();"></i>
+                        <div id="opcionesUsuario" class="dropdown-content">
+                            <a href="https://micreditolibertad.com/dashboard/editarPerfil">Editar Perfil</a>
+                            <a href="https://micreditolibertad.com/logout">Salir</a>
+                        </div>
+                    </div>
+                    <span class="mobile tablet floatLeft mobMenu dashboard dropbtn"><i class="fa fa-bars" aria-hidden="true" onclick="w3_open();"></i></span>
+                </div>
+                <div class="floatRight width337 borderGrayRight paddingBottom10 paddingTop10 desktop">
+                    <div class="searchBox autoMargin clearFix">
+                        <input class="letterspacing0.8 font16 gray" placeholder="Buscar">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="floatRight notificationBox dashboardHeader marginTop15 paddingTop5 paddingRight5 paddingLeft5">
+                    <img class="floatLeft paddingLeft10 paddingTop5" src="./Dashboard_files/bell.png" alt="bell" title="bell">
+                    <p class="floatLeft colorWhite font16 paddingLeft10">1293</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <ul id="mySidenav" class="side-nav right-aligned" style="transform: translateX(0px); -ms-transform: translateX(0px);
+    -webkit-transform: translateX(0px);">
+        <li>
+            <a href="https://micreditolibertad.com/dashboard/index">
+                <img class="menuIcon" src="./Dashboard_files/dashboard.png" alt="dashboard" title="dashboard"> DASHBOARD
+            </a>
+        </li>
+        <li>
+
+            <a href="https://micreditolibertad.com/dashboard/solicitudes">
+                <img class="menuIcon" src="./Dashboard_files/solicitudes.png" alt="solicitudes" title="solicitudes"> SOLICTUDES
+            </a>
+
+        </li>
+        <li>
+
+            <a href="https://micreditolibertad.com/dashboard/analiticas">
+                <img class="menuIcon" src="./Dashboard_files/analiticas.png" alt="analiticas" title="analiticas"> ANALITICAS
+            </a>
+
+        </li>
+        <li>
+
+            <a href="https://micreditolibertad.com/dashboard/verificaciones">
+                <img class="menuIcon" src="./Dashboard_files/verification.png" alt="verificacion" title="verificaciones"> VERIFICACIONES
+            </a>
+
+        </li>
+        <li>
+
+            <a href="https://micreditolibertad.com/dashboard/configuracion">
+                <img class="menuIcon" src="./Dashboard_files/configration.png" alt="configration" title="configration"> CONFIGURACIÓN
+            </a>
+
+        </li>
+        <li>
+
+            <a href="https://micreditolibertad.com/dashboard/administracion">
+                <img class="menuIcon" src="./Dashboard_files/key.png" alt="administracion" title="administracion"> ADMINISTRACIÓN
+            </a>
+
+        </li>
+    </ul>
+    <nav id="dashboardMenu" class="container menuBox marginBottom28">
+        <ul class="clearFix">
+            <li class="floatLeft">
+                <a id="principalOpc1" href="https://micreditolibertad.com/dashboard/index" class="elementoMenuPrincipal font12">
+                    <span><img class="menuIcon" src="./Dashboard_files/dashboard.png" alt="dashboard" title="dashboard"></span>
+                    <span>DASHBOARD</span>
+                </a>
+            </li>
+
+            <li class="floatLeft">
+                <a id="principalOpc2" href="https://micreditolibertad.com/dashboard/solicitudes" class="elementoMenuPrincipal font12 blueButton">
+                    <span><img class="menuIcon" src="./Dashboard_files/solicitudes.png" alt="solicitudes" title="solicitudes"></span>
+                    <span>SOLICITUDES</span>
+                </a>
+            </li>
+
+
+            <li class="floatLeft">
+                <a id="principalOpc3" href="https://micreditolibertad.com/dashboard/analiticas" class="elementoMenuPrincipal font12">
+                    <span><img class="menuIcon" src="./Dashboard_files/analiticas.png" alt="analiticas" title="analiticas"></span>
+                    <span>ANALITICAS</span>
+                </a>
+            </li>
+
+
+            <li class="floatLeft">
+                <a id="principalOpc4" href="https://micreditolibertad.com/dashboard/verificaciones" class="elementoMenuPrincipal font12">
+                    <span><img class="menuIcon" src="./Dashboard_files/verification.png" alt="verificacion" title="verificaciones"></span>
+                    <span>VERIFICACIONES</span>
+                </a>
+            </li>
+
+
+            <li class="floatLeft">
+                <a id="principalOpc5" href="https://micreditolibertad.com/dashboard/configuracion" class="elementoMenuPrincipal font12">
+                    <span><img class="menuIcon" src="./Dashboard_files/configration.png" alt="configration" title="configration"></span>
+                    <span>CONFIGURACIÓN</span>
+                </a>
+            </li>
+
+
+            <li class="floatLeft">
+                <a id="principalOpc6" href="https://micreditolibertad.com/dashboard/administracion" class="elementoMenuPrincipal font12">
+                    <span><img class="menuIcon" src="./Dashboard_files/key.png" alt="administracion" title="administracion"></span>
+                    <span>ADMINISTRACIÓN</span>
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+
+    <div class="width990 solicitudBox autoMargin">
+        <div class="">
+            <ul class="clearFix">
+                <li class="floatLeft paddingLeft5 paddingRight5">
+                    <a href="#" title="SOLICITUDES" class="displayInline font24 fontWeight700 darkBluetitle paddingTop20 paddingBottom15 paddingLeft20 paddingRight20">SOLICITUDES</a>
+                </li>
+                <li id="dictaminadasButton" class="opcSolicitudes floatLeft lightGrayBG paddingLeft5 paddingRight5">
+                    <a onclick="mostrarApartado('opcSolicitudes','solicitudesTab','dictaminadas');" title="Ver Solicitudes Dictaminadas" class="displayInline font20 fontWeight500 darkBluetitle padding20 pointer">DICTAMINADAS</a>
+                </li>
+                <li id="noDictaminadasButton" class="opcSolicitudes floatLeft paddingLeft5 paddingRight5">
+                    <a onclick="mostrarApartado('opcSolicitudes','solicitudesTab','noDictaminadas');" title="Ver Solicitudes por Dictaminar" class="displayInline font20 fontWeight500 darkBluetitle opacity05 padding20 pointer">POR DICTAMINAR</a>
+                </li>
+                <li id="complementoSolicitadoButton" class="opcSolicitudes floatLeft paddingLeft5 paddingRight5">
+                    <a onclick="mostrarApartado('opcSolicitudes','solicitudesTab','complementoSolicitado');" title="Ver Solicitudes con Complemento Solicitado" class="displayInline font20 fontWeight500 darkBluetitle opacity05 padding20 pointer">COMPLEMENTO SOLICITADO</a>
+                </li>
+                <li id="complementoSolicitadoButton" class="opcSolicitudes floatLeft paddingLeft5 paddingRight5">
+                    <a onclick="mostrarApartado('opcSolicitudes','solicitudesTab','complementoSolicitado');" title="Ver Solicitudes con Complemento Solicitado" class="displayInline font20 fontWeight500 darkBluetitle opacity05 padding20 pointer">PERFILADOR</a>
+                </li>
+            </ul>
+        </div>
+        <div class="lightGrayBG">
+            <ul class="clearFix paddingLeft30 solicitude_submenu">
+                <li class="floatLeft">
+                    <a id="subMenuOpc1" onclick="listarSolicitudesPor(1);" title="Día" class="elementoSubMenu displayInline blueButton font16 fontweight300  paddingTop10 paddingBottom10 paddingLeft20 paddingRight20 pointer">Día</a>
+                </li>
+                <li class="floatLeft">
+                    <a id="subMenuOpc7" onclick="listarSolicitudesPor(7);" title="Semana" class="elementoSubMenu displayInline gray font16 fontweight300 paddingTop10 paddingBottom10 paddingLeft20 paddingRight20 pointer">Semana</a>
+                </li>
+                <li class="floatLeft">
+                    <a id="subMenuOpc31" onclick="listarSolicitudesPor(31);" title="Mes" class="elementoSubMenu displayInline gray font16 fontweight300 paddingTop10 paddingBottom10 paddingLeft20 paddingRight20 pointer">Mes</a>
+                </li>
+                <li class="floatLeft">
+                    <a id="subMenuOpc365" onclick="listarSolicitudesPor(365);" title="Año" class="elementoSubMenu displayInline gray font16 fontweight300 paddingTop10 paddingBottom10 paddingLeft20 paddingRight20 pointer">Año</a>
+                </li>
+                <li class="floatLeft">
+                    <a id="subMenuOpc5" onclick="listarSolicitudesPor(5);" title="Por Fecha" class="elementoSubMenu displayInline gray font16 fontweight300 paddingTop10 paddingBottom10 paddingLeft20 paddingRight20 pointer">Por Fecha</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <input type="hidden" id="opcionMenu" value="2">
+
+    <section class="container marginBottom28" id="rangoDeFechas" style="display: none;">
+        <div class="width990 solicitudBox autoMargin" style="height: 10%;">
+            <div class="lightGrayBG" style="height: 100%;">
+                <div class="col12 floatLeft" style="padding: 15px;">
+                    <div class="col4 floatLeft">
+                        <div class="col3 floatLeft">
+                            <p class="gray font14 fontWeight500 letterspacing1 marginLeft20" style="padding: 5px;"><strong>Desde</strong></p>
+                        </div>
+                        <div class="col9 floatLeft">
+                            <input class="block cameraBox col11 height30 hasDatepicker" style="text-align: center;" readonly="" type="text" id="from" name="from">
+                        </div>
+                    </div>
+                    <div class="col4 floatLeft">
+                        <div class="col3 floatLeft">
+                            <p class="gray font14 fontWeight500 letterspacing1 marginLeft20" style="padding: 5px;"><strong>a</strong></p>
+                        </div>
+                        <div class="col9 floatLeft">
+                            <input class="block cameraBox col11 height30 hasDatepicker" style="text-align: center;" readonly="" type="text" id="to" name="to">
+                        </div>
+                    </div>
+                    <div class="col4 floatLeft">
+                        <center>
+                            <li>
+                                <a onclick="listarSolicitudesPor(0);" title="Buscar" class="displayInline blueButton font16 fontweight300  paddingTop10 paddingBottom10 paddingLeft20 paddingRight20 pointer">Buscar</a>
+                            </li>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="section form">
+                <div class="col12 paddingTop25">
+                    <div class="col3 floatLeft">
+
+                        <ul class="progress-indicator stepped stacked">
+                            <li class="step1 active">
+                                <a href="#">
+                                    <span class="bubble"><span>1</span><i class="fa fa-check"></i></span>
+                                    <span class="stacked-text">
+                              <span class="step">Cliente</span>
+                                    <span class="substep">Comprobante de ingresos</em></span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="step2">
+                                <span class="bubble"><span>2</span><i class="fa fa-check"></i></span>
+                                <span class="stacked-text">
+                        <span class="step">Generales</span>
+                                <span class="substep">Personales</span>
+                                <span class="substep">Vivienda</span>
+                                <span class="substep">Familia</span>
+                                <span class="substep">Empleo</span>
+                                </span>
+                            </li>
+                            <li class="step3">
+                                <span class="bubble"><span>3</span><i class="fa fa-check"></i></span>
+                                <span class="stacked-text">
+                        <span class="step">Ofertas</span>
+                                </span>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div id="step1" class="col9 floatLeft">
+                        <h2>Perfilador del cliente</h2>
+                        <form class="perfilador padding20">
+                            <div class="col6 floatLeft">
+                                <label for="clienteExistente">¿Cliente existente?</label>
+                                <input class="cameraBox height30" type="text" name="clienteExistente" placeholder="SI/NO" />
+                            </div>
+                            <div class="col6 floatLeft">
+                                <label for="noCliente">No. Cliente</label>
+                                <input class="cameraBox height30" type="text" name="noCliente" />
+                            </div>
+                            <div class="col6 floatLeft paddingTop20">
+                                <select class="js-example-basic-single col12">
+                                  <option></option>
+                                  <optgroup label="Formales">
+                                    <option value="ec">Estado de cuenta</option>
+                                    <option value="rn">Recibo de Nómina</option>
+                                    <option value="rh">Recibo de Honorarios</option>
+                                  </optgroup>
+                                  <optgroup label="Informales">
+                                    <option value="t">Ticket</option>
+                                    <option value="n">Nota</option>
+                                  </optgroup>
+                                </select>
+                            </div>
+                            <div class="col12 floatLeft paddingTop20">
+                              <button class="greenBox colorWhite" type="button" onclick="goStep2()">Siguiente</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="step2" class="hide col9 floatLeft">
+                        <h2>Datos personales</h2>
+                        <div class="col6 floatLeft">
+                          <div class="mat-div">
+                            <label for="complete-name" class="mat-label">Nombre completo</label>
+                            <input type="text" class="mat-input" id="complete-name">
+                          </div>
+                        </div>
+                        <div class="col6 floatLeft">
+                          <div class="mat-div">
+                            <label for="celular" class="mat-label">Teléfono celular</label>
+                            <input type="phone" class="mat-input" id="celular">
+                          </div>
+                        </div>
+                        <div class="col6 floatLeft">
+                          <div class="mat-div">
+                            <label for="code" class="mat-label">Código de Verificación</label>
+                            <input type="text" class="mat-input" id="code">
+                          </div>
+                        </div>
+                        <div class="col6 floatLeft">
+                          <div class="mat-div">
+                            <label for="tel-fijo" class="mat-label">Teléfono Fijo</label>
+                            <input type="text" class="mat-input" id="tel-fijo">
+                          </div>
+                        </div>
+                        <div class="col6 floatLeft">
+                          <div class="mat-div">
+                            <label for="mail" class="mat-label">Correo electrónico</label>
+                            <input type="email" class="mat-input" id="mail">
+                          </div>
+                        </div>
+                        <div class="col6 floatLeft">
+                          <div class="mdl-selectfield">
+                            <label>Sexo</label>
+                            <select class="browser-default">
+                              <option value="" disabled selected>Sexo</option>
+                              <option value="f">Femenino</option>
+                              <option value="m">Masculino</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col6 floatLeft">
+                          <div class="mat-div">
+                            <label for="fecha_nac" class="mat-label">Fecha de nacimiento</label>
+                            <input type="email" class="mat-input datepicker" id="fecha_nac">
+                          </div>
+                          <!-- <div class="mdl-selectfield">
+                            <label>Fecha de nacimiento</label>
+                            <select class="browser-default">
+                              <option value="" disabled selected>Fecha de nacimiento</option>
+                              <option value="1">Option 1</option>
+                              <option value="2">Option 2</option>
+                              <option value="3">Option 3</option>
+                            </select>
+                          </div> -->
+                        </div>
+                        <div class="col6 floatLeft">
+                          <div class="mdl-selectfield">
+                            <label>Lugar de nacimiento</label>
+                            <select class="browser-default">
+                              <option value="" disabled selected>Lugar de nacimiento</option>
+                              <option value="1">Ciudad de México</option>
+                              <option value="2">Aguascalientes</option>
+                              <option value="3">Durango</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col6 floatLeft">
+                          <div class="mat-div">
+                            <label for="rfc" class="mat-label">RFC</label>
+                            <input type="email" class="mat-input" id="rfc">
+                          </div>
+                        </div>
+                        <div class="col6 floatLeft">
+                          <div class="mat-div">
+                            <label for="curp" class="mat-label">CURP</label>
+                            <input type="email" class="mat-input" id="curp">
+                          </div>
+                        </div>
+                        <div class="col6 floatLeft">
+                          <div class="mdl-selectfield">
+                            <label>Nacionalidad</label>
+                            <select class="browser-default">
+                              <option value="" disabled selected>Nacionalidad</option>
+                              <option value="1">Mexicana</option>
+                              <option value="2">Extranjera</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col12 floatLeft paddingTop20">
+                          <button class="greenBox colorWhite" type="button" onclick="goStep3()">Siguiente</button>
+                        </div>
+                    </div>
+                    <div id="step3" class="hide col9 floatLeft">
+                      <h2>Vivienda</h2>
+                      <div class="col12 floatLeft">
+                        <div class="mat-div">
+                          <label for="direccion" class="mat-label">Dirección</label>
+                          <input type="text" class="mat-input" id="direccion">
+                        </div>
+                      </div>
+                      <div class="col6 floatLeft">
+                        <div class="mdl-selectfield">
+                          <label>Tipo de vivienda</label>
+                          <select class="browser-default">
+                            <option value="" disabled selected>Tipo de vivienda</option>
+                            <option value="1">Opción 1</option>
+                            <option value="2">Opción 2</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col6 floatLeft">
+                        <div class="mat-div">
+                          <label for="renta" class="mat-label">Monto de renta</label>
+                          <input type="text" class="mat-input" id="renta">
+                        </div>
+                      </div>
+                      <div class="col6 floatLeft">
+                        <div class="mat-div">
+                          <label for="antiguedad_casa" class="mat-label">Antigüedad en la vivienda</label>
+                          <input type="text" class="mat-input" id="antiguedad_casa">
+                        </div>
+                      </div>
+                      <div class="col6 floatLeft">
+                        <div class="mat-div">
+                          <label for="antiguedad_ciudad" class="mat-label">Antigüedad en la ciudad</label>
+                          <input type="text" class="mat-input" id="antiguedad_ciudad">
+                        </div>
+                      </div>
+                      <div class="col12 floatLeft paddingTop20">
+                        <button class="greenBox colorWhite" type="button" onclick="goStep4()">Siguiente</button>
+                      </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    </div>
+    <script src="perfilador.js"></script>
+  <script src="picker.js"></script>
+    <script src="picker.date.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".js-example-basic-single").select2({
+                placeholder: "Tipo de comprobante de Ingresos"
+            });
+            $('.datepicker').pickadate()
+        });
+    </script>
+
+
+
+</body>
+
+</html>
