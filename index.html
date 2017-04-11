@@ -295,15 +295,22 @@
                         <h2>Perfilador del cliente</h2>
                         <form class="perfilador padding20">
                             <div class="col6 floatLeft">
-                                <label for="clienteExistente">¿Cliente existente?</label>
-                                <input class="cameraBox height30" type="text" name="clienteExistente" placeholder="SI/NO" />
+                                <p class="correctaBoxLabel">¿CLIENTE EXISTENTE?</p>
+                                <div id="cliente_si" class="correctaBox floatLeft">
+                                    <p class="center paddingTop15 paddingBottom15 lightGray">SI</p>
+                                </div>
+                                <div id="cliente_no" class="floatLeft correctaBox">
+                                    <p class="center paddingTop15 paddingBottom15 lightGray">NO</p>
+                                </div>
+
                             </div>
-                            <div class="col6 floatLeft">
-                                <label for="noCliente">No. Cliente</label>
-                                <input class="cameraBox height30" type="text" name="noCliente" />
+
+                            <div id="inputNoCliente" class="hide col6 floatLeft">
+                              <p class="gray font14 letterspacing1.1">No. DE CLIENTE</p>
+                              <input class="inPuts4a marginTop15 headingColor" type="text" />
                             </div>
-                            <div class="col6 floatLeft paddingTop20">
-                                <select class="js-example-basic-single col12">
+                            <div id="selectTipoComprobante" class="col12 floatLeft paddingTop20">
+                                <select class="js-example-basic-single col6">
                                   <option></option>
                                   <optgroup label="Formales">
                                     <option value="ec">Estado de cuenta</option>
@@ -576,7 +583,11 @@
                             <h4>Clásico PF</h4>
                             <ul class="features">
                                 <li class="brief"><i class="fa fa-male"></i></li>
-                                <li class="price">$50,000</span></li>
+                                <li class="price">$50,000
+                                  <div class="flat-slider" id="flat-slider3"></div>
+                                  <p class="floatLeft marginLeft12 font14 fontWeight500 gray opacity05 paddingTop5">MIN</p>
+                                  <p class="floatRight marginRight12 font14 fontWeight500 gray opacity05 paddingTop5">MAX</p>
+                                </li>
                                 <li><h6>PLAZO</h6> 96 QUINCENAS</li>
                                 <li><h6>PAGO QUINCENAL</h6> $ 600</li>
                                 <li><h6>REQUISITOS</h6></li>
@@ -591,7 +602,11 @@
                             <h4>Automotriz</h4>
                             <ul class="features">
                                 <li class="brief"><i class="fa fa-car"></i></li>
-                                <li class="price">$180,000</li>
+                                <li class="price">$180,000
+                                  <div class="flat-slider" id="flat-slider1"></div>
+                                  <p class="floatLeft marginLeft12 font14 fontWeight500 gray opacity05 paddingTop5">MIN</p>
+                                  <p class="floatRight marginRight12 font14 fontWeight500 gray opacity05 paddingTop5">MAX</p>
+                                </li>
                                 <li><h6>PLAZO</h6> 96 QUINCENAS</li>
                                 <li><h6>PAGO QUINCENAL</h6> $ 600</li>
                                 <li><h6>REQUISITOS</h6></li>
@@ -607,7 +622,11 @@
                             <h4>Liberate</h4>
                             <ul class="features">
                                 <li class="brief"><i class="fa fa-money"></i></li>
-                                <li class="price">$70,000</li>
+                                <li class="price">$70,000
+                                  <div class="flat-slider" id="flat-slider2"></div>
+                                  <p class="floatLeft marginLeft12 font14 fontWeight500 gray opacity05 paddingTop5">MIN</p>
+                                  <p class="floatRight marginRight12 font14 fontWeight500 gray opacity05 paddingTop5">MAX</p>
+                                </li>
                                 <li><h6>PLAZO</h6> 96 QUINCENAS</li>
                                 <li><h6>PAGO QUINCENAL</h6> $ 600</li>
                                 <li><h6>REQUISITOS</h6></li>

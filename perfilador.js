@@ -41,6 +41,27 @@ function verOfertas () {
   $('#menuEmpleo').removeClass('active');
 }
 
+$('#cliente_si').on('click', function() {
+  $('#inputNoCliente').removeClass('hide');
+});
+
+$('#flat-slider1').slider({
+  orientation: 'horizontal',
+  range:       false,
+  value:      100
+});
+
+$('#flat-slider2').slider({
+  orientation: 'horizontal',
+  range:       false,
+  value:      100
+});
+
+$('#flat-slider3').slider({
+  orientation: 'horizontal',
+  range:       false,
+  value:      100
+});
 
 $(".mat-input").focus(function(){
   $(this).parent().addClass("is-active is-completed");

@@ -4,11 +4,22 @@
   height: 300px;
   overflow-y: scroll
 }
-.stepsContainer h2 {
-  color: #252D60;
+h2 {
+  color: #005398;
 text-transform: uppercase;
 font-weight: 300;
 }
+
+.perfilador .correctaBox {
+    width: calc(50% - 35px);
+    width: -webkit-calc(50% - 35px);
+  }
+
+.perfilador  .inPuts4a, .inPuts4B {
+    height: 47px;
+    width: -webkit-calc(100% - 251px);
+    width: calc(100% - 251px);
+  }
 
 .perfilador {
   text-transform: uppercase;
@@ -317,16 +328,20 @@ z-index: 100;
 }
 
 .is-active::after {
-  transform: scaleX(1);
+  /*transform: scaleX(1);*/
 }
 
 .is-active .mat-label {
   color: #298DF5;
+
+
+
 }
 
 .is-completed .mat-label {
-  font-size: 12px;
-  transform: translateY(0);
+  font-size: .8rem;
+   -webkit-transform: translateY(-140%);
+  transform: translateY(-140%);
 }
 
 select {
@@ -464,6 +479,78 @@ border-top: 1px solid gray;
 }
 .promo button:hover {
   background: #4990E2;
+}
+
+.flat-slider.ui-corner-all,
+.flat-slider .ui-corner-all {
+  border-radius: 0 !important;
+}
+
+.flat-slider.ui-slider {
+  border: 0 !important;
+  background: #d6d1d0 !important;
+  border-radius: 15px !important;
+}
+
+.flat-slider.ui-slider-horizontal {
+  height: 3px !important;
+  padding-top: 0 !important;
+  margin: 25px 38px;
+}
+
+.price .fontWeight500 {
+  position: relative;
+  top: -33px;
+}
+
+.ui-slider-horizontal .ui-state-default {
+    margin-left: 0 !important; */
+        text-align: center;
+    padding-top: 0;
+}
+
+.flat-slider.ui-slider-vertical {
+  height: 15em !important;
+  width: 3px !important;
+}
+
+.flat-slider .ui-slider-handle {
+  width: 15px !important;
+  height: 15px !important;
+  background: #125dbc !important;
+  border-radius: 46% !important;
+  border: none !important;
+  cursor: pointer !important;
+}
+
+.flat-slider.ui-slider-horizontal .ui-slider-handle {
+  top: 50% !important;
+  margin-top: -7.5px !important;
+}
+
+.flat-slider.ui-slider-vertical .ui-slider-handle {
+  left: 50% !important;
+  margin-left: -7.5px !important;
+}
+
+.flat-slider .ui-slider-handle:hover {
+  opacity: .8 !important;
+}
+
+.flat-slider .ui-slider-range {
+  border: 0 !important;
+  border-radius: 15 !important;
+  background: #f99;
+}
+
+.flat-slider.ui-slider-horizontal .ui-slider-range {
+  top: 0 !important;
+  height: 3px !important;
+}
+
+.flat-slider.ui-slider-vertical .ui-slider-range {
+  left: 0 !important;
+  width: 3px !important;
 }
 
 .scale button {
