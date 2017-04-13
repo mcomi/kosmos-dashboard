@@ -1,8 +1,9 @@
 
 
-.stepsContainer {
-  height: 300px;
-  overflow-y: scroll
+
+
+.stepContent {
+  padding-bottom: 30px;
 }
 h2 {
   color: #005398;
@@ -244,6 +245,17 @@ background: #298DF5;
 z-index: 100;
   }
 
+  .progress-indicator.stacked .active .stacked-text span.substep.active:before {
+    content: '';
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    position: absolute;
+    left: -34px;
+    background: #298DF5;
+    z-index: 100;
+}
+
   .progress-indicator.stacked .completed .stacked-text span.substep:before {
     content: '';
   width: 11px;
@@ -340,8 +352,9 @@ z-index: 100;
 
 .is-completed .mat-label {
   font-size: .8rem;
-   -webkit-transform: translateY(-140%);
-  transform: translateY(-140%);
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  padding: 2px 0;
 }
 
 select {
@@ -405,7 +418,7 @@ select:focus {
 .promo {
   margin: 1em .5em 1.625em;
 
-  padding: 7px 0px 0px;
+  padding: 10px 0px 0px;
   background: #005398;
   font-weight: 400;
   line-height: 1.625;
@@ -417,7 +430,7 @@ select:focus {
     display: inline;
     float: left;
     width: 33.333%;
-    margin: 1em 0 0;
+    margin: 2em 0 0;
   }
   .promo.first {
     border-right: none;

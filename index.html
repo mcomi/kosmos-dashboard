@@ -19,12 +19,13 @@
     <link href="./Dashboard_files/select2.min.css" type="text/css" media="screen, projection" dir="css" file="select2.min.css" title="text/css" rel="stylesheet" />
     <link rel="stylesheet" href="default.css">
     <link rel="stylesheet" href="default.date.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
     <link href="./Dashboard_files/spectrum.css" type="text/css" media="screen, projection" dir="css" file="spectrum.css" title="text/css" rel="stylesheet">
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="perfilador.css">
     <link rel="stylesheet" href="./Dashboard_files/libertad.css">
-
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
     <script async="" src="./Dashboard_files/analytics.js"></script>
     <script src="./Dashboard_files/jquery-3.0.0.min.js" type="text/javascript" dir="js" file="jquery-3.0.0.min.js"></script>
 
@@ -56,7 +57,7 @@
 
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#navbar-steps">
     <header class="appHeader" style="border-top: solid 5px #ffcb00; background-color: #005398;">
         <div class="container clearFix">
             <img class="logo dashboard floatLeft desktop" src="./Dashboard_files/logo.png" alt="Logo" title="Logo">
@@ -262,13 +263,13 @@
                 <div class="col12 paddingTop25">
                     <div class="col3 floatLeft">
 
-                        <ul class="progress-indicator stepped stacked">
+                        <ul id="navbar-steps" class="progress-indicator stepped stacked">
                             <li class="step1 active">
 
                                     <span class="bubble"><span>1</span><i class="fa fa-check"></i></span>
                                     <span class="stacked-text">
                                       <span class="step active">Cliente</span>
-                                      <span id="menuComprobante" class="substep active">Comprobante de ingresos</em></span>
+                                        <span id="menuComprobante" class="substep active">Comprobante de ingresos</em></span>
                                     </span>
 
                             </li>
@@ -276,10 +277,10 @@
                                 <span class="bubble"><span>2</span><i class="fa fa-check"></i></span>
                                 <span class="stacked-text">
                                 <span class="step">Generales</span>
-                                <span id="menuPersonales" class="substep">Personales</span>
-                                <span id="menuVivienda" class="substep">Vivienda</span>
-                                <span id="menuFamilia" class="substep">Familia</span>
-                                <span id="menuEmpleo" class="substep">Empleo</span>
+                                  <span id="menuPersonales" class="substep">Personales</span>
+                                  <span id="menuVivienda" class="substep">Vivienda</span>
+                                  <span id="menuFamilia" class="substep">Familia</span>
+                                  <span id="menuEmpleo" class="substep">Empleo</span>
                                 </span>
                             </li>
                             <li class="step3">
@@ -291,49 +292,70 @@
 
                         </ul>
                     </div>
-                    <div id="step1" class="col9 floatLeft stepsContainer">
+                    <div class="col9 floatLeft stepsContainer">
+
+                      <div id="step1" class="col12 floatLeft stepContent animated fadeInRight">
                         <h2>Perfilador del cliente</h2>
                         <form class="perfilador padding20">
-                            <div class="col6 floatLeft">
-                                <p class="correctaBoxLabel">¿CLIENTE EXISTENTE?</p>
-                                <div id="cliente_si" class="correctaBox floatLeft">
-                                    <p class="center paddingTop15 paddingBottom15 lightGray">SI</p>
-                                </div>
-                                <div id="cliente_no" class="floatLeft correctaBox">
-                                    <p class="center paddingTop15 paddingBottom15 lightGray">NO</p>
-                                </div>
-
+                          <div class="col6 floatLeft">
+                            <p class="correctaBoxLabel">¿CLIENTE EXISTENTE?</p>
+                            <div id="cliente_si" class="correctaBox floatLeft">
+                              <p class="center paddingTop15 paddingBottom15 lightGray">SI</p>
+                            </div>
+                            <div id="cliente_no" class="floatLeft correctaBox">
+                              <p class="center paddingTop15 paddingBottom15 lightGray">NO</p>
                             </div>
 
-                            <div id="inputNoCliente" class="hide col6 floatLeft">
-                              <p class="gray font14 letterspacing1.1">No. DE CLIENTE</p>
-                              <input class="inPuts4a marginTop15 headingColor" type="text" />
-                            </div>
-                            <div id="selectTipoComprobante" class="col12 floatLeft paddingTop20">
-                                <select class="js-example-basic-single col6">
-                                  <option></option>
-                                  <optgroup label="Formales">
-                                    <option value="ec">Estado de cuenta</option>
-                                    <option value="rn">Recibo de Nómina</option>
-                                    <option value="rh">Recibo de Honorarios</option>
-                                  </optgroup>
-                                  <optgroup label="Informales">
-                                    <option value="t">Ticket</option>
-                                    <option value="n">Nota</option>
-                                  </optgroup>
-                                </select>
-                            </div>
-                            <div class="col12 floatLeft paddingTop20">
-                              <button class="greenBox colorWhite" type="button" onclick="goStep2()">Siguiente</button>
-                            </div>
+                          </div>
+
+                          <div id="inputNoCliente" class="hide col6 floatLeft">
+                            <p class="gray font14 letterspacing1.1">No. DE CLIENTE</p>
+                            <input class="inPuts4a marginTop15 headingColor" type="text" />
+                          </div>
+                          <div id="selectTipoComprobante" class="col12 floatLeft paddingTop20">
+                            <select class="js-example-basic-single col6">
+                              <option></option>
+                              <optgroup label="Formales">
+                                <option value="ec">Estado de cuenta</option>
+                                <option value="rn">Recibo de Nómina</option>
+                                <option value="rh">Recibo de Honorarios</option>
+                              </optgroup>
+                              <optgroup label="Informales">
+                                <option value="t">Ticket</option>
+                                <option value="n">Nota</option>
+                              </optgroup>
+                            </select>
+                          </div>
+                          <div class="clearfix"></div>
                         </form>
-                    </div>
-                    <div id="step2" class="hide col9 floatLeft stepsContainer">
+                        <div class="col12 floatLeft paddingTop20">
+                          <button class="greenBox colorWhite" type="button" onclick="goStep2()">Siguiente</button>
+                        </div>
+                      </div>
+                      <div id="step2" class="animated hide col12 floatLeft stepContent fadeInRight">
                         <h2>Datos personales</h2>
                         <div class="col6 floatLeft">
                           <div class="mat-div">
-                            <label for="complete-name" class="mat-label">Nombre completo</label>
-                            <input type="text" class="mat-input" id="complete-name">
+                            <label for="nombre" class="mat-label">Nombre</label>
+                            <input type="text" class="mat-input" id="nombre">
+                          </div>
+                        </div>
+                        <div class="col6 floatLeft">
+                          <div class="mat-div">
+                            <label for="segundo-nombre" class="mat-label">Segundo Nombre</label>
+                            <input type="text" class="mat-input" id="segundo-nombre">
+                          </div>
+                        </div>
+                        <div class="col6 floatLeft">
+                          <div class="mat-div">
+                            <label for="apellidoPaterno" class="mat-label">Apellido paterno</label>
+                            <input type="text" class="mat-input" id="apellidoPaterno">
+                          </div>
+                        </div>
+                        <div class="col6 floatLeft">
+                          <div class="mat-div">
+                            <label for="apellidoMaterno" class="mat-label">Apellido materno</label>
+                            <input type="text" class="mat-input" id="apellidoMaterno">
                           </div>
                         </div>
                         <div class="col6 floatLeft">
@@ -413,232 +435,281 @@
                         <div class="col12 floatLeft paddingTop20">
                           <button class="greenBox colorWhite" type="button" onclick="goStep3()">Siguiente</button>
                         </div>
-                    </div>
-                    <div id="step3" class="hide col9 floatLeft stepsContainer">
-                      <h2>Vivienda</h2>
-                      <div class="col12 floatLeft">
-                        <div class="mat-div">
-                          <label for="direccion" class="mat-label">Dirección</label>
-                          <input type="text" class="mat-input" id="direccion">
+                      </div>
+                      <div id="step3" class="hide col12 floatLeft stepContent animated fadeInRight">
+                        <h2>Vivienda</h2>
+                        <div class="col3 floatLeft">
+                          <div class="mat-div">
+                            <label for="cp" class="mat-label">Código postal</label>
+                            <input type="text" class="mat-input" id="cp">
+                          </div>
+                        </div>
+                        <div class="col9 floatLeft">
+                          <div class="mat-div">
+                            <label for="calle" class="mat-label">Calle</label>
+                            <input type="text" class="mat-input" id="calle">
+                          </div>
+                        </div>
+                        <div class="col3 floatLeft">
+                          <div class="mat-div">
+                            <label for="no-interior" class="mat-label">No. interior</label>
+                            <input type="text" class="mat-input" id="no-interior">
+                          </div>
+                        </div>
+                        <div class="col3 floatLeft">
+                          <div class="mat-div">
+                            <label for="no-exterior" class="mat-label">No. exterior</label>
+                            <input type="text" class="mat-input" id="no-exterior">
+                          </div>
+                        </div>
+                        <div class="col6 floatLeft">
+                          <div class="mdl-selectfield">
+                            <label>Colonia</label>
+                            <select class="browser-default">
+                              <option value="" disabled selected>Colonia</option>
+                              <option value="1">Opción 1</option>
+                              <option value="2">Opción 2</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col6 floatLeft">
+                          <div class="mdl-selectfield">
+                            <label>Municipio/Delegación</label>
+                            <select class="browser-default">
+                              <option value="" disabled selected>Municipio/Delegación</option>
+                              <option value="1">Opción 1</option>
+                              <option value="2">Opción 2</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col6 floatLeft">
+                          <div class="mdl-selectfield">
+                            <label>Estado</label>
+                            <select class="browser-default">
+                              <option value="" disabled selected>Estado</option>
+                              <option value="1">Opción 1</option>
+                              <option value="2">Opción 2</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col6 floatLeft">
+                          <div class="mdl-selectfield">
+                            <label>Tipo de vivienda</label>
+                            <select class="browser-default">
+                              <option value="" disabled selected>Tipo de vivienda</option>
+                              <option value="1">Propia</option>
+                              <option value="2">Rentada</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col6 floatLeft">
+                          <div class="mat-div">
+                            <label for="renta" class="mat-label">Monto de renta</label>
+                            <input type="text" class="mat-input" id="renta">
+                          </div>
+                        </div>
+                        <div class="col6 floatLeft">
+                          <div class="mat-div">
+                            <label for="antiguedad_casa" class="mat-label">Antigüedad en la vivienda</label>
+                            <input type="text" class="mat-input" id="antiguedad_casa">
+                          </div>
+                        </div>
+                        <div class="col6 floatLeft">
+                          <div class="mat-div">
+                            <label for="antiguedad_ciudad" class="mat-label">Antigüedad en la ciudad</label>
+                            <input type="text" class="mat-input" id="antiguedad_ciudad">
+                          </div>
+                        </div>
+                        <div class="col12 floatLeft paddingTop20">
+                          <button class="greenBox colorWhite" type="button" onclick="goStep4()">Siguiente</button>
                         </div>
                       </div>
-                      <div class="col6 floatLeft">
-                        <div class="mdl-selectfield">
-                          <label>Tipo de vivienda</label>
-                          <select class="browser-default">
-                            <option value="" disabled selected>Tipo de vivienda</option>
-                            <option value="1">Opción 1</option>
-                            <option value="2">Opción 2</option>
-                          </select>
+                      <div id="step4" class="hide col12 floatLeft stepContent animated fadeInRight">
+                        <h2>Datos Familiares</h2>
+                        <div class="col4 floatLeft">
+                          <div class="mat-div">
+                            <label for="dependientes" class="mat-label">Dependientes económicos</label>
+                            <input type="text" class="mat-input" id="dependientes">
+                          </div>
                         </div>
-                      </div>
-                      <div class="col6 floatLeft">
-                        <div class="mat-div">
-                          <label for="renta" class="mat-label">Monto de renta</label>
-                          <input type="text" class="mat-input" id="renta">
+                        <div class="col4 floatLeft">
+                          <div class="mdl-selectfield">
+                            <label>Estado civil</label>
+                            <select class="browser-default">
+                              <option value="" disabled selected>Estado civil</option>
+                              <option value="1">Opción 1</option>
+                              <option value="2">Opción 2</option>
+                            </select>
+                          </div>
                         </div>
-                      </div>
-                      <div class="col6 floatLeft">
-                        <div class="mat-div">
-                          <label for="antiguedad_casa" class="mat-label">Antigüedad en la vivienda</label>
-                          <input type="text" class="mat-input" id="antiguedad_casa">
+                        <div class="col4 floatLeft">
+                          <div class="mdl-selectfield">
+                            <label>Régimen de bienes</label>
+                            <select class="browser-default">
+                              <option value="" disabled selected>Régimen de bienes</option>
+                              <option value="1">Opción 1</option>
+                              <option value="2">Opción 2</option>
+                            </select>
+                          </div>
                         </div>
-                      </div>
-                      <div class="col6 floatLeft">
-                        <div class="mat-div">
-                          <label for="antiguedad_ciudad" class="mat-label">Antigüedad en la ciudad</label>
-                          <input type="text" class="mat-input" id="antiguedad_ciudad">
+                        <div class="col6 floatLeft">
+                          <div class="mat-div">
+                            <label for="nombre-conyuge" class="mat-label">Nombre del conyugue</label>
+                            <input type="text" class="mat-input" id="nombre-conyuge">
+                          </div>
                         </div>
-                      </div>
-                      <div class="col12 floatLeft paddingTop20">
-                        <button class="greenBox colorWhite" type="button" onclick="goStep4()">Siguiente</button>
-                      </div>
-                    </div>
-                    <div id="step4" class="hide col9 floatLeft stepsContainer">
-                      <h2>Datos Familiares</h2>
-                      <div class="col4 floatLeft">
-                        <div class="mat-div">
-                          <label for="dependientes" class="mat-label">Dependientes económicos</label>
-                          <input type="text" class="mat-input" id="dependientes">
-                        </div>
-                      </div>
-                      <div class="col4 floatLeft">
-                        <div class="mdl-selectfield">
-                          <label>Estado civil</label>
-                          <select class="browser-default">
-                            <option value="" disabled selected>Estado civil</option>
-                            <option value="1">Opción 1</option>
-                            <option value="2">Opción 2</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col4 floatLeft">
-                        <div class="mdl-selectfield">
-                          <label>Régimen de bienes</label>
-                          <select class="browser-default">
-                            <option value="" disabled selected>Régimen de bienes</option>
-                            <option value="1">Opción 1</option>
-                            <option value="2">Opción 2</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col6 floatLeft">
-                        <div class="mat-div">
-                          <label for="nombre-conyuge" class="mat-label">Nombre del conyugue</label>
-                          <input type="text" class="mat-input" id="nombre-conyuge">
-                        </div>
-                      </div>
-                      <div class="col6 floatLeft">
-                        <div class="mat-div">
-                          <label for="fecha_nac_cony" class="mat-label">Fecha de nacimiento del conyugue</label>
-                          <input type="email" class="mat-input datepicker" id="fecha_nac_cony">
-                        </div>
+                        <div class="col6 floatLeft">
+                          <div class="mat-div">
+                            <label for="fecha_nac_cony" class="mat-label">Fecha de nacimiento del conyugue</label>
+                            <input type="email" class="mat-input datepicker" id="fecha_nac_cony">
+                          </div>
 
-                      </div>
-                      <div class="col6 floatLeft">
-                        <div class="mdl-selectfield">
-                          <label>Lugar de nacimiento</label>
-                          <select class="browser-default">
-                            <option value="" disabled selected>Lugar de nacimiento del conyugue</option>
-                            <option value="1">Ciudad de México</option>
-                            <option value="2">Aguascalientes</option>
-                            <option value="3">Durango</option>
-                          </select>
+                        </div>
+                        <div class="col6 floatLeft">
+                          <div class="mdl-selectfield">
+                            <label>Lugar de nacimiento</label>
+                            <select class="browser-default">
+                              <option value="" disabled selected>Lugar de nacimiento del conyugue</option>
+                              <option value="1">Ciudad de México</option>
+                              <option value="2">Aguascalientes</option>
+                              <option value="3">Durango</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col6 floatLeft">
+                          <div class="mat-div">
+                            <label for="rfc" class="mat-label">RFC del conyugue</label>
+                            <input type="email" class="mat-input" id="rfc">
+                          </div>
+                        </div>
+                        <div class="col6 floatLeft">
+                          <div class="mat-div">
+                            <label for="curp" class="mat-label">CURP del conyugue</label>
+                            <input type="email" class="mat-input" id="curp">
+                          </div>
+                        </div>
+                        <div class="col6 floatLeft">
+                          <div class="mdl-selectfield">
+                            <label>Nacionalidad</label>
+                            <select class="browser-default">
+                              <option value="" disabled selected>Nacionalidad del conyugue</option>
+                              <option value="1">Mexicana</option>
+                              <option value="2">Extranjera</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col12 floatLeft paddingTop20">
+                          <button class="greenBox colorWhite" type="button" onclick="goStep5()">Siguiente</button>
                         </div>
                       </div>
-                      <div class="col6 floatLeft">
-                        <div class="mat-div">
-                          <label for="rfc" class="mat-label">RFC del conyugue</label>
-                          <input type="email" class="mat-input" id="rfc">
+                      <div id="step5" class="hide col12 floatLeft stepContent animated fadeInRight">
+                        <h2>Datos del Empleo</h2>
+                        <div class="col6 floatLeft">
+                          <div class="mdl-selectfield">
+                            <label>Profesión</label>
+                            <select class="browser-default">
+                              <option value="" disabled selected>Profesión</option>
+                              <option value="1">Opcion 1</option>
+                              <option value="2">Opcion 2</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col6 floatLeft">
+                          <div class="mdl-selectfield">
+                            <label>Ocupación</label>
+                            <select class="browser-default">
+                              <option value="" disabled selected>Ocupación</option>
+                              <option value="1">Opcion 1</option>
+                              <option value="2">Opcion 2</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col6 floatLeft">
+                          <div class="mat-div">
+                            <label for="empresa" class="mat-label">Nombre de la empresa</label>
+                            <input type="text" class="mat-input" id="empresa">
+                          </div>
+                        </div>
+                        <div class="col6 floatLeft">
+                          <div class="mat-div">
+                            <label for="ingreso-fijo" class="mat-label">Ingreso fijo</label>
+                            <input type="text" class="mat-input" id="ingreso-fijo">
+                          </div>
+                        </div>
+                        <div class="col6 floatLeft">
+                          <div class="mat-div">
+                            <label for="ingreso-variable" class="mat-label">Ingreso variable</label>
+                            <input type="text" class="mat-input" id="ingreso-variable">
+                          </div>
+                        </div>
+                        <div class="col12 floatLeft paddingTop20">
+                          <button class="greenBox colorWhite" type="button" onclick="verOfertas()">Ver ofertas</button>
                         </div>
                       </div>
-                      <div class="col6 floatLeft">
-                        <div class="mat-div">
-                          <label for="curp" class="mat-label">CURP del conyugue</label>
-                          <input type="email" class="mat-input" id="curp">
-                        </div>
-                      </div>
-                      <div class="col6 floatLeft">
-                        <div class="mdl-selectfield">
-                          <label>Nacionalidad</label>
-                          <select class="browser-default">
-                            <option value="" disabled selected>Nacionalidad del conyugue</option>
-                            <option value="1">Mexicana</option>
-                            <option value="2">Extranjera</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col12 floatLeft paddingTop20">
-                        <button class="greenBox colorWhite" type="button" onclick="goStep5()">Siguiente</button>
-                      </div>
-                    </div>
-                    <div id="step5" class="hide col9 floatLeft stepsContainer">
-                      <h2>Datos del Empleo</h2>
-                      <div class="col6 floatLeft">
-                        <div class="mdl-selectfield">
-                          <label>Profesión</label>
-                          <select class="browser-default">
-                            <option value="" disabled selected>Profesión</option>
-                            <option value="1">Opcion 1</option>
-                            <option value="2">Opcion 2</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col6 floatLeft">
-                        <div class="mdl-selectfield">
-                          <label>Ocupación</label>
-                          <select class="browser-default">
-                            <option value="" disabled selected>Ocupación</option>
-                            <option value="1">Opcion 1</option>
-                            <option value="2">Opcion 2</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col6 floatLeft">
-                        <div class="mat-div">
-                          <label for="empresa" class="mat-label">Nombre de la empresa</label>
-                          <input type="text" class="mat-input" id="empresa">
-                        </div>
-                      </div>
-                      <div class="col6 floatLeft">
-                        <div class="mat-div">
-                          <label for="ingreso-fijo" class="mat-label">Ingreso fijo</label>
-                          <input type="text" class="mat-input" id="ingreso-fijo">
-                        </div>
-                      </div>
-                      <div class="col6 floatLeft">
-                        <div class="mat-div">
-                          <label for="ingreso-variable" class="mat-label">Ingreso variable</label>
-                          <input type="text" class="mat-input" id="ingreso-variable">
-                        </div>
-                      </div>
-                      <div class="col12 floatLeft paddingTop20">
-                        <button class="greenBox colorWhite" type="button" onclick="verOfertas()">Ver ofertas</button>
-                      </div>
-                    </div>
-                    <div id="ofertas" class="hide col9 floatLeft">
-                      <h2>Ofertas disponibles</h2>
-                      <div class="promos">
-                        <div class="promo first">
+                      <div id="ofertas" class="hide col12 floatLeft animated fadeInRight">
+                        <h2>Ofertas disponibles</h2>
+                        <div class="promos">
+                          <div class="promo first">
                             <h4>Clásico PF</h4>
                             <ul class="features">
-                                <li class="brief"><i class="fa fa-male"></i></li>
-                                <li class="price">$50,000
-                                  <div class="flat-slider" id="flat-slider3"></div>
-                                  <p class="floatLeft marginLeft12 font14 fontWeight500 gray opacity05 paddingTop5">MIN</p>
-                                  <p class="floatRight marginRight12 font14 fontWeight500 gray opacity05 paddingTop5">MAX</p>
-                                </li>
-                                <li><h6>PLAZO</h6> 96 QUINCENAS</li>
-                                <li><h6>PAGO QUINCENAL</h6> $ 600</li>
-                                <li><h6>REQUISITOS</h6></li>
-                                <li class="requisitos">1. IDENTIFICACIÓN OFICIAL</li>
-                                <li class="requisitos">2. COMPROBANTE DE DOMICILIO</li>
-                                <li class="requisitos">3. COMPROBANTE DE INGRESOS</li>
-                                <li class="requisitos">4. AVAL: 1</li>
-                                <li class="buy"><button>APLICAR</button></li>
+                              <li class="brief"><i class="fa fa-male"></i></li>
+                              <li class="price">$50,000
+                                <div class="flat-slider" id="flat-slider3"></div>
+                                <p class="floatLeft marginLeft12 font14 fontWeight500 gray opacity05 paddingTop5">MIN</p>
+                                <p class="floatRight marginRight12 font14 fontWeight500 gray opacity05 paddingTop5">MAX</p>
+                              </li>
+                              <li><h6>PLAZO</h6> 96 QUINCENAS</li>
+                              <li><h6>PAGO QUINCENAL</h6> $ 600</li>
+                              <li><h6>REQUISITOS</h6></li>
+                              <li class="requisitos">1. IDENTIFICACIÓN OFICIAL</li>
+                              <li class="requisitos">2. COMPROBANTE DE DOMICILIO</li>
+                              <li class="requisitos">3. COMPROBANTE DE INGRESOS</li>
+                              <li class="requisitos">4. AVAL: 1</li>
+                              <li class="buy"><button>APLICAR</button></li>
                             </ul>
-                        </div>
-                        <div class="promo second">
+                          </div>
+                          <div class="promo second">
                             <h4>Automotriz</h4>
                             <ul class="features">
-                                <li class="brief"><i class="fa fa-car"></i></li>
-                                <li class="price">$180,000
-                                  <div class="flat-slider" id="flat-slider1"></div>
-                                  <p class="floatLeft marginLeft12 font14 fontWeight500 gray opacity05 paddingTop5">MIN</p>
-                                  <p class="floatRight marginRight12 font14 fontWeight500 gray opacity05 paddingTop5">MAX</p>
-                                </li>
-                                <li><h6>PLAZO</h6> 96 QUINCENAS</li>
-                                <li><h6>PAGO QUINCENAL</h6> $ 600</li>
-                                <li><h6>REQUISITOS</h6></li>
-                                <li class="requisitos">1. IDENTIFICACIÓN OFICIAL</li>
-                                <li class="requisitos">2. COMPROBANTE DE DOMICILIO</li>
-                                <li class="requisitos">3. COMPROBANTE DE INGRESOS</li>
-                                <li class="requisitos">4. COTIZACIÓN DEL AUTO</li>
-                                <li class="requisitos">5. AVALES: 0</li>
-                                <li class="buy"><button>APLICAR</button></li>
+                              <li class="brief"><i class="fa fa-car"></i></li>
+                              <li class="price">$180,000
+                                <div class="flat-slider" id="flat-slider1"></div>
+                                <p class="floatLeft marginLeft12 font14 fontWeight500 gray opacity05 paddingTop5">MIN</p>
+                                <p class="floatRight marginRight12 font14 fontWeight500 gray opacity05 paddingTop5">MAX</p>
+                              </li>
+                              <li><h6>PLAZO</h6> 96 QUINCENAS</li>
+                              <li><h6>PAGO QUINCENAL</h6> $ 600</li>
+                              <li><h6>REQUISITOS</h6></li>
+                              <li class="requisitos">1. IDENTIFICACIÓN OFICIAL</li>
+                              <li class="requisitos">2. COMPROBANTE DE DOMICILIO</li>
+                              <li class="requisitos">3. COMPROBANTE DE INGRESOS</li>
+                              <li class="requisitos">4. COTIZACIÓN DEL AUTO</li>
+                              <li class="requisitos">5. AVALES: 0</li>
+                              <li class="buy"><button>APLICAR</button></li>
                             </ul>
-                        </div>
-                        <div class="promo third scale">
+                          </div>
+                          <div class="promo third scale">
                             <h4>Liberate</h4>
                             <ul class="features">
-                                <li class="brief"><i class="fa fa-money"></i></li>
-                                <li class="price">$70,000
-                                  <div class="flat-slider" id="flat-slider2"></div>
-                                  <p class="floatLeft marginLeft12 font14 fontWeight500 gray opacity05 paddingTop5">MIN</p>
-                                  <p class="floatRight marginRight12 font14 fontWeight500 gray opacity05 paddingTop5">MAX</p>
-                                </li>
-                                <li><h6>PLAZO</h6> 96 QUINCENAS</li>
-                                <li><h6>PAGO QUINCENAL</h6> $ 600</li>
-                                <li><h6>REQUISITOS</h6></li>
-                                <li class="requisitos">1. IDENTIFICACIÓN OFICIAL</li>
-                                <li class="requisitos">2. COMPROBANTE DE DOMICILIO</li>
-                                <li class="requisitos">3. COMPROBANTE DE INGRESOS</li>
-                                <li class="requisitos">4. B.C. CRÉDITO</li>
-                                <li class="requisitos">5. AVALES: 0</li>
-                                <li class="buy"><button>APLICAR</button></li>
+                              <li class="brief"><i class="fa fa-money"></i></li>
+                              <li class="price">$70,000
+                                <div class="flat-slider" id="flat-slider2"></div>
+                                <p class="floatLeft marginLeft12 font14 fontWeight500 gray opacity05 paddingTop5">MIN</p>
+                                <p class="floatRight marginRight12 font14 fontWeight500 gray opacity05 paddingTop5">MAX</p>
+                              </li>
+                              <li><h6>PLAZO</h6> 96 QUINCENAS</li>
+                              <li><h6>PAGO QUINCENAL</h6> $ 600</li>
+                              <li><h6>REQUISITOS</h6></li>
+                              <li class="requisitos">1. IDENTIFICACIÓN OFICIAL</li>
+                              <li class="requisitos">2. COMPROBANTE DE DOMICILIO</li>
+                              <li class="requisitos">3. COMPROBANTE DE INGRESOS</li>
+                              <li class="requisitos">4. B.C. CRÉDITO</li>
+                              <li class="requisitos">5. AVALES: 0</li>
+                              <li class="buy"><button>APLICAR</button></li>
                             </ul>
+                          </div>
                         </div>
-                    </div>
+                      </div>
                     </div>
                 </div>
 
@@ -652,6 +723,8 @@
   <script src="picker.js"></script>
     <script src="picker.date.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js"></script> -->
     <script type="text/javascript">
         $(document).ready(function() {
             $(".js-example-basic-single").select2({

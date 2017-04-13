@@ -1,6 +1,7 @@
 function goStep2(){
   $('#step1').hide();
   $('#step2').removeClass('hide');
+
   $('.step1 .step').removeClass('active');
   $('.step1').removeClass('active');
   $('#menuComprobante').removeClass('active');
