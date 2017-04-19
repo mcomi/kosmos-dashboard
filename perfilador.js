@@ -37,8 +37,10 @@ function goConsultaBuro () {
   $('#step5').hide()
   $('#buro').removeClass('hide');
   $('.step2').removeClass('active');
+  $('.step2 .step').removeClass('active');
   $('.step2').addClass('completed');
   $('.step3').addClass('active');
+  $('.step3 .step').addClass('active');
   $('#menuEmpleo').removeClass('active');
 }
 
