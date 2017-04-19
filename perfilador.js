@@ -33,13 +33,19 @@ function goStep5(){
   $('#menuEmpleo').addClass('active');
 }
 
-function verOfertas () {
+function goConsultaBuro () {
   $('#step5').hide()
-  $('#ofertas').removeClass('hide');
+  $('#buro').removeClass('hide');
   $('.step2').removeClass('active');
   $('.step2').addClass('completed');
   $('.step3').addClass('active');
   $('#menuEmpleo').removeClass('active');
+}
+
+function verOfertas () {
+  $('#buro').hide()
+  $('#ofertas').removeClass('hide');
+  $('.step3').addClass('completed');
 }
 
 $('#cliente_si').on('click', function() {
@@ -64,6 +70,7 @@ $('#flat-slider3').slider({
   value:      100
 });
 
+
 $(".mat-input").focus(function(){
   $(this).parent().addClass("is-active is-completed");
 });
@@ -73,3 +80,49 @@ $(".mat-input").focusout(function(){
     $(this).parent().removeClass("is-completed");
   $(this).parent().removeClass("is-active");
 })
+
+function slide() {
+  $('.first').hide();
+  $('.third')
+  .addClass('first')
+  .removeClass('third')
+  .removeClass('scale');
+  //.css({"-webkit-transform":"translateX(-100%)"})
+  setTimeout(function() {
+
+    $('.second')
+    .removeClass('second')
+    .addClass('third')
+    .addClass('scale');
+  },1000)
+
+}
+
+$( "select" )
+  .each(function() {
+    $( this ).change(function(){
+      $(this).parent().parent().siblings().css({'display':'block'})
+    });
+  })
+
+
+// Instantiate the Bootstrap carousel
+$('.multi-item-carousel').carousel({
+  interval: false
+});
+
+// for every slide in carousel, copy the next slide's item in the slide.
+// Do the same for the next, next item.
+$('.multi-item-carousel .item').each(function(){
+  var next = $(this).next();
+  if (!next.length) {
+    next = $(this).siblings(':first');
+  }
+  next.children(':first-child').clone().appendTo($(this));
+
+  if (next.next().length>0) {
+    next.next().children(':first-child').clone().appendTo($(this));
+  } else {
+  	$(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+  }
+});
