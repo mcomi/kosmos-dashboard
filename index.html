@@ -19,6 +19,8 @@
     <link href="./Dashboard_files/select2.min.css" type="text/css" media="screen, projection" dir="css" file="select2.min.css" title="text/css" rel="stylesheet" />
     <link rel="stylesheet" href="default.css">
     <link rel="stylesheet" href="default.date.css">
+    <link rel="stylesheet" type="text/css" href="jquery-anyslider.css"/>
+  </head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
     <link href="./Dashboard_files/spectrum.css" type="text/css" media="screen, projection" dir="css" file="spectrum.css" title="text/css" rel="stylesheet">
@@ -809,126 +811,133 @@
                         </div>
                         <div id="ofertas" class="hide col12 floatLeft animated fadeInRight">
                             <h2>Ofertas disponibles</h2>
-
-                            <div class="carousel slide multi-item-carousel" id="theCarousel">
-                                <div class="carousel-inner">
-                                    <div class="item promo first">
-                                        <h4>Clásico PF</h4>
-                                        <ul class="features">
-                                            <li class="brief"><i class="fa fa-male"></i></li>
-                                            <li class="price">$50,000
-                                                <div class="flat-slider" id="flat-slider3"></div>
-                                                <p class="floatLeft marginLeft12 font14 fontWeight500 gray opacity05 paddingTop5">MIN</p>
-                                                <p class="floatRight marginRight12 font14 fontWeight500 gray opacity05 paddingTop5">MAX</p>
-                                            </li>
-                                            <li>
-                                                <h6>PLAZO</h6> 96 QUINCENAS</li>
-                                            <li>
-                                                <h6>PAGO QUINCENAL</h6> $ 600</li>
-                                            <li>
-                                                <h6>REQUISITOS</h6></li>
+                            <div class="promos">
+                              <div id="wrapper_bu">
+                                <div id="bu1">
+                                  <div class="promo">
+                                    <h4>Clásico PF</h4>
+                                    <ul class="features">
+                                      <li class="brief"><i class="fa fa-male"></i></li>
+                                      <li class="price">$50,000
+                                        <div class="flat-slider" id="flat-slider3"></div>
+                                        <p class="floatLeft marginLeft12 font14 fontWeight500 gray opacity05 paddingTop5">MIN</p>
+                                        <p class="floatRight marginRight12 font14 fontWeight500 gray opacity05 paddingTop5">MAX</p>
+                                      </li>
+                                      <li>
+                                        <h6>PLAZO</h6> 96 QUINCENAS</li>
+                                        <li>
+                                          <h6>PAGO QUINCENAL</h6> $ 600</li>
+                                          <li>
+                                            <h6>REQUISITOS</h6></li>
                                             <li class="requisitos">1. IDENTIFICACIÓN OFICIAL</li>
                                             <li class="requisitos">2. COMPROBANTE DE DOMICILIO</li>
                                             <li class="requisitos">3. COMPROBANTE DE INGRESOS</li>
                                             <li class="requisitos">4. AVAL: 1</li>
                                             <li class="buy"><button>APLICAR</button></li>
-                                        </ul>
-                                    </div>
-                                    <div class="item promo second">
-                                        <h4>Automotriz</h4>
-                                        <ul class="features">
+                                          </ul>
+                                        </div>
+                                      </div>
+                                      <div id="bu2">
+                                        <div class="promo">
+                                          <h4>Automotriz</h4>
+                                          <ul class="features">
                                             <li class="brief"><i class="fa fa-car"></i></li>
                                             <li class="price">$180,000
-                                                <div class="flat-slider" id="flat-slider1"></div>
-                                                <p class="floatLeft marginLeft12 font14 fontWeight500 gray opacity05 paddingTop5">MIN</p>
-                                                <p class="floatRight marginRight12 font14 fontWeight500 gray opacity05 paddingTop5">MAX</p>
+                                              <div class="flat-slider" id="flat-slider1"></div>
+                                              <p class="floatLeft marginLeft12 font14 fontWeight500 gray opacity05 paddingTop5">MIN</p>
+                                              <p class="floatRight marginRight12 font14 fontWeight500 gray opacity05 paddingTop5">MAX</p>
                                             </li>
                                             <li>
-                                                <h6>PLAZO</h6> 96 QUINCENAS</li>
-                                            <li>
+                                              <h6>PLAZO</h6> 96 QUINCENAS</li>
+                                              <li>
                                                 <h6>PAGO QUINCENAL</h6> $ 600</li>
-                                            <li>
-                                                <h6>REQUISITOS</h6></li>
-                                            <li class="requisitos">1. IDENTIFICACIÓN OFICIAL</li>
-                                            <li class="requisitos">2. COMPROBANTE DE DOMICILIO</li>
-                                            <li class="requisitos">3. COMPROBANTE DE INGRESOS</li>
-                                            <li class="requisitos">4. COTIZACIÓN DEL AUTO</li>
-                                            <li class="requisitos">5. AVALES: 0</li>
-                                            <li class="buy"><button>APLICAR</button></li>
-                                        </ul>
-                                    </div>
-                                    <div class="item promo third scale">
-                                        <h4>Liberate</h4>
-                                        <ul class="features">
-                                            <li class="brief"><i class="fa fa-money"></i></li>
-                                            <li class="price">$70,000
-                                                <div class="flat-slider" id="flat-slider2"></div>
-                                                <p class="floatLeft marginLeft12 font14 fontWeight500 gray opacity05 paddingTop5">MIN</p>
-                                                <p class="floatRight marginRight12 font14 fontWeight500 gray opacity05 paddingTop5">MAX</p>
-                                            </li>
-                                            <li>
-                                                <h6>PLAZO</h6> 96 QUINCENAS</li>
-                                            <li>
-                                                <h6>PAGO QUINCENAL</h6> $ 600</li>
-                                            <li>
-                                                <h6>REQUISITOS</h6></li>
-                                            <li class="requisitos">1. IDENTIFICACIÓN OFICIAL</li>
-                                            <li class="requisitos">2. COMPROBANTE DE DOMICILIO</li>
-                                            <li class="requisitos">3. COMPROBANTE DE INGRESOS</li>
-                                            <li class="requisitos">4. B.C. CRÉDITO</li>
-                                            <li class="requisitos">5. AVALES: 0</li>
-                                            <li class="buy"><button>APLICAR</button></li>
-                                        </ul>
-                                    </div>
-                                    <div class="item promo second">
-                                        <h4>Automotriz</h4>
-                                        <ul class="features">
-                                            <li class="brief"><i class="fa fa-car"></i></li>
-                                            <li class="price">$180,000
-                                                <div class="flat-slider" id="flat-slider1"></div>
-                                                <p class="floatLeft marginLeft12 font14 fontWeight500 gray opacity05 paddingTop5">MIN</p>
-                                                <p class="floatRight marginRight12 font14 fontWeight500 gray opacity05 paddingTop5">MAX</p>
-                                            </li>
-                                            <li>
-                                                <h6>PLAZO</h6> 96 QUINCENAS</li>
-                                            <li>
-                                                <h6>PAGO QUINCENAL</h6> $ 600</li>
-                                            <li>
-                                                <h6>REQUISITOS</h6></li>
-                                            <li class="requisitos">1. IDENTIFICACIÓN OFICIAL</li>
-                                            <li class="requisitos">2. COMPROBANTE DE DOMICILIO</li>
-                                            <li class="requisitos">3. COMPROBANTE DE INGRESOS</li>
-                                            <li class="requisitos">4. COTIZACIÓN DEL AUTO</li>
-                                            <li class="requisitos">5. AVALES: 0</li>
-                                            <li class="buy"><button>APLICAR</button></li>
-                                        </ul>
-                                    </div>
-                                    <div class="item promo second">
-                                        <h4>Automotriz</h4>
-                                        <ul class="features">
-                                            <li class="brief"><i class="fa fa-car"></i></li>
-                                            <li class="price">$180,000
-                                                <div class="flat-slider" id="flat-slider1"></div>
-                                                <p class="floatLeft marginLeft12 font14 fontWeight500 gray opacity05 paddingTop5">MIN</p>
-                                                <p class="floatRight marginRight12 font14 fontWeight500 gray opacity05 paddingTop5">MAX</p>
-                                            </li>
-                                            <li>
-                                                <h6>PLAZO</h6> 96 QUINCENAS</li>
-                                            <li>
-                                                <h6>PAGO QUINCENAL</h6> $ 600</li>
-                                            <li>
-                                                <h6>REQUISITOS</h6></li>
-                                            <li class="requisitos">1. IDENTIFICACIÓN OFICIAL</li>
-                                            <li class="requisitos">2. COMPROBANTE DE DOMICILIO</li>
-                                            <li class="requisitos">3. COMPROBANTE DE INGRESOS</li>
-                                            <li class="requisitos">4. COTIZACIÓN DEL AUTO</li>
-                                            <li class="requisitos">5. AVALES: 0</li>
-                                            <li class="buy"><button>APLICAR</button></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
-                                <a class="right carousel-control" href="#theCarousel" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+                                                <li>
+                                                  <h6>REQUISITOS</h6></li>
+                                                  <li class="requisitos">1. IDENTIFICACIÓN OFICIAL</li>
+                                                  <li class="requisitos">2. COMPROBANTE DE DOMICILIO</li>
+                                                  <li class="requisitos">3. COMPROBANTE DE INGRESOS</li>
+                                                  <li class="requisitos">4. COTIZACIÓN DEL AUTO</li>
+                                                  <li class="requisitos">5. AVALES: 0</li>
+                                                  <li class="buy"><button>APLICAR</button></li>
+                                                </ul>
+                                              </div>
+                                            </div>
+                                            <div id="bu3">
+                                              <div class="promo">
+                                                <h4>Liberate</h4>
+                                                <ul class="features">
+                                                  <li class="brief"><i class="fa fa-money"></i></li>
+                                                  <li class="price">$70,000
+                                                    <div class="flat-slider" id="flat-slider2"></div>
+                                                    <p class="floatLeft marginLeft12 font14 fontWeight500 gray opacity05 paddingTop5">MIN</p>
+                                                    <p class="floatRight marginRight12 font14 fontWeight500 gray opacity05 paddingTop5">MAX</p>
+                                                  </li>
+                                                  <li>
+                                                    <h6>PLAZO</h6> 96 QUINCENAS</li>
+                                                    <li>
+                                                      <h6>PAGO QUINCENAL</h6> $ 600</li>
+                                                      <li>
+                                                        <h6>REQUISITOS</h6></li>
+                                                        <li class="requisitos">1. IDENTIFICACIÓN OFICIAL</li>
+                                                        <li class="requisitos">2. COMPROBANTE DE DOMICILIO</li>
+                                                        <li class="requisitos">3. COMPROBANTE DE INGRESOS</li>
+                                                        <li class="requisitos">4. B.C. CRÉDITO</li>
+                                                        <li class="requisitos">5. AVALES: 0</li>
+                                                        <li class="buy"><button>APLICAR</button></li>
+                                                      </ul>
+                                                    </div>
+                                                  </div>
+                                                  <div id="bu4">
+                                                    <div class="promo">
+                                                      <h4>Automotriz</h4>
+                                                      <ul class="features">
+                                                        <li class="brief"><i class="fa fa-car"></i></li>
+                                                        <li class="price">$180,000
+                                                          <div class="flat-slider" id="flat-slider4"></div>
+                                                          <p class="floatLeft marginLeft12 font14 fontWeight500 gray opacity05 paddingTop5">MIN</p>
+                                                          <p class="floatRight marginRight12 font14 fontWeight500 gray opacity05 paddingTop5">MAX</p>
+                                                        </li>
+                                                        <li>
+                                                          <h6>PLAZO</h6> 96 QUINCENAS</li>
+                                                          <li>
+                                                            <h6>PAGO QUINCENAL</h6> $ 600</li>
+                                                            <li>
+                                                              <h6>REQUISITOS</h6></li>
+                                                              <li class="requisitos">1. IDENTIFICACIÓN OFICIAL</li>
+                                                              <li class="requisitos">2. COMPROBANTE DE DOMICILIO</li>
+                                                              <li class="requisitos">3. COMPROBANTE DE INGRESOS</li>
+                                                              <li class="requisitos">4. COTIZACIÓN DEL AUTO</li>
+                                                              <li class="requisitos">5. AVALES: 0</li>
+                                                              <li class="buy"><button>APLICAR</button></li>
+                                                            </ul>
+                                                          </div>
+                                                        </div>
+                                                        <div id="bu5">
+                                                          <div class="promo">
+                                                            <h4>Automotriz</h4>
+                                                            <ul class="features">
+                                                              <li class="brief"><i class="fa fa-car"></i></li>
+                                                              <li class="price">$180,000
+                                                                <div class="flat-slider" id="flat-slider5"></div>
+                                                                <p class="floatLeft marginLeft12 font14 fontWeight500 gray opacity05 paddingTop5">MIN</p>
+                                                                <p class="floatRight marginRight12 font14 fontWeight500 gray opacity05 paddingTop5">MAX</p>
+                                                              </li>
+                                                              <li>
+                                                                <h6>PLAZO</h6> 96 QUINCENAS</li>
+                                                                <li>
+                                                                  <h6>PAGO QUINCENAL</h6> $ 600</li>
+                                                                  <li>
+                                                                    <h6>REQUISITOS</h6></li>
+                                                                    <li class="requisitos">1. IDENTIFICACIÓN OFICIAL</li>
+                                                                    <li class="requisitos">2. COMPROBANTE DE DOMICILIO</li>
+                                                                    <li class="requisitos">3. COMPROBANTE DE INGRESOS</li>
+                                                                    <li class="requisitos">4. COTIZACIÓN DEL AUTO</li>
+                                                                    <li class="requisitos">5. AVALES: 0</li>
+                                                                    <li class="buy"><button>APLICAR</button></li>
+                                                                  </ul>
+                                                                </div>
+                                                              </div>
+                                                            </div>
                             </div>
                         </div>
 
@@ -944,15 +953,13 @@
     <script src="perfilador.js"></script>
     <script src="picker.js"></script>
     <script src="picker.date.js"></script>
+    <script src="jquery.anyslider.min.js"></script>
 
 
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js"></script> -->
     <script type="text/javascript">
         $(document).ready(function() {
-            $(".js-example-basic-single").select2({
-                placeholder: "Tipo de comprobante de Ingresos"
-            });
-            $('.datepicker').pickadate()
+
         });
     </script>
 

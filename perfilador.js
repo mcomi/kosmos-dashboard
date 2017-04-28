@@ -54,23 +54,23 @@ $('#cliente_si').on('click', function() {
   $('#inputNoCliente').removeClass('hide');
 });
 
-$('#flat-slider1').slider({
-  orientation: 'horizontal',
-  range:       false,
-  value:      100
-});
-
-$('#flat-slider2').slider({
-  orientation: 'horizontal',
-  range:       false,
-  value:      100
-});
-
-$('#flat-slider3').slider({
-  orientation: 'horizontal',
-  range:       false,
-  value:      100
-});
+// $('#flat-slider1').slider({
+//   orientation: 'horizontal',
+//   range:       false,
+//   value:      100
+// });
+//
+// $('#flat-slider2').slider({
+//   orientation: 'horizontal',
+//   range:       false,
+//   value:      100
+// });
+//
+// $('#flat-slider3').slider({
+//   orientation: 'horizontal',
+//   range:       false,
+//   value:      100
+// });
 
 
 $(".mat-input").focus(function(){
@@ -105,26 +105,64 @@ $( "select" )
     $( this ).change(function(){
       $(this).parent().parent().siblings().css({'display':'block'})
     });
+  });
+
+  var Conclave=(function(){
+      var buArr =[],arlen;
+      return {
+        init:function(){
+          this.addCN();this.clickReg();
+        },
+        addCN:function(){
+          var buarr=["holder_bu_awayL2","holder_bu_awayL1","holder_bu_center","holder_bu_awayR1","holder_bu_awayR2"];
+          for(var i=1;i<=buarr.length;++i){
+            $("#bu"+i).removeClass().addClass(buarr[i-1]+" holder_bu");
+          }
+        },
+        clickReg:function(){
+          $(".holder_bu").each(function(){
+            buArr.push($(this).attr('class'))
+          });
+          arlen=buArr.length;
+          for(var i=0;i<arlen;++i){
+            buArr[i]=buArr[i].replace(" holder_bu","")
+          };
+          $(".holder_bu").click(function(buid){
+            var me=this,id=this.id||buid,joId=$("#"+id),joCN=joId.attr("class").replace(" holder_bu","");
+            var cpos=buArr.indexOf(joCN),mpos=buArr.indexOf("holder_bu_center");
+            if(cpos!=mpos){
+                tomove=cpos>mpos?arlen-cpos+mpos:mpos-cpos;
+                while(tomove){
+                  var t=buArr.shift();
+                  buArr.push(t);
+                  for(var i=1;i<=arlen;++i){
+                    $("#bu"+i).removeClass().addClass(buArr[i-1]+" holder_bu");
+                  }
+                  --tomove;
+                }
+            }
+          })
+        },
+        auto:function(){
+          for(i=1;i<=1;++i){
+            $(".holder_bu").delay(4000).trigger('click',"bu"+i).delay(4000);
+            console.log("called");
+          }
+        }
+      };
+  })();
+
+  $(document).ready(function(){
+      window['conclave']=Conclave;
+      Conclave.init();
+
+      $(".js-example-basic-single").select2({
+          placeholder: "Tipo de comprobante de Ingresos"
+      });
+
+      $('.flat-slider').slider({
+        orientation: 'horizontal',
+        range:       false,
+        value:      100
+      });
   })
-
-
-// Instantiate the Bootstrap carousel
-$('.multi-item-carousel').carousel({
-  interval: false
-});
-
-// for every slide in carousel, copy the next slide's item in the slide.
-// Do the same for the next, next item.
-$('.multi-item-carousel .item').each(function(){
-  var next = $(this).next();
-  if (!next.length) {
-    next = $(this).siblings(':first');
-  }
-  next.children(':first-child').clone().appendTo($(this));
-
-  if (next.next().length>0) {
-    next.next().children(':first-child').clone().appendTo($(this));
-  } else {
-  	$(this).siblings(':first').children(':first-child').clone().appendTo($(this));
-  }
-});
