@@ -17,14 +17,12 @@
     <link href="./Dashboard_files/sweetalert.css" type="text/css" media="screen, projection" dir="css" file="sweetalert.css" title="text/css" rel="stylesheet">
 
     <link href="./Dashboard_files/select2.min.css" type="text/css" media="screen, projection" dir="css" file="select2.min.css" title="text/css" rel="stylesheet" />
-    <link rel="stylesheet" href="default.css">
-    <link rel="stylesheet" href="default.date.css">
-    <link rel="stylesheet" type="text/css" href="jquery-anyslider.css"/>
   </head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
     <link href="./Dashboard_files/spectrum.css" type="text/css" media="screen, projection" dir="css" file="spectrum.css" title="text/css" rel="stylesheet">
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="swiper.min.css">
     <link rel="stylesheet" href="perfilador.css">
     <link rel="stylesheet" href="./Dashboard_files/libertad.css">
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
@@ -52,6 +50,9 @@
     <script src="./Dashboard_files/googleanalytics.js" type="text/javascript" dir="js" file="googleanalytics.js"></script>
 
     <script src="./Dashboard_files/chosen.jquery.js"></script>
+
+
+    <script src="swiper.min.js"></script>
 
     <meta name="layout" content="dashboard">
 
@@ -259,11 +260,13 @@
             </div>
         </div>
     </section>
-    <section>
+    <section id="perfilador-desktop">
         <div class="container">
             <div class="section form">
                 <div class="col12 paddingTop25">
+
                     <div class="col3 floatLeft">
+
 
                         <ul id="navbar-steps" class="progress-indicator stepped stacked">
                             <li class="step1 active">
@@ -430,44 +433,50 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col6 floatLeft">
+                            <div class="row">
+
+                              <div class="col6 floatLeft">
                                 <span class="select-label">Lugar de nacimiento</span>
                                 <div class="col12 floatLeft">
-                                    <div class="mdl-selectfield">
-                                        <label>Lugar de nacimiento</label>
-                                        <select class="browser-default">
-                                          <option value="" disabled selected>Lugar de nacimiento</option>
-                                          <option value="1">Ciudad de México</option>
-                                          <option value="2">Aguascalientes</option>
-                                          <option value="3">Durango</option>
-                                        </select>
-                                    </div>
+                                  <div class="mdl-selectfield" id="lugar_nacimiento">
+                                    <label>Lugar de nacimiento</label>
+                                    <select class="browser-default">
+                                      <option value="" disabled selected>Lugar de nacimiento</option>
+                                      <option value="1">Ciudad de México</option>
+                                      <option value="2">Aguascalientes</option>
+                                      <option value="3">Durango</option>
+                                    </select>
+                                  </div>
                                 </div>
-                            </div>
-                            <div class="col6 floatLeft">
+                              </div>
+                              <div class="col6 floatLeft">
                                 <div class="mat-div">
-                                    <label for="rfc" class="mat-label">RFC</label>
-                                    <input type="text" class="mat-input" id="rfc">
+                                  <label for="rfc" class="mat-label">RFC</label>
+                                  <input type="text" class="mat-input" id="rfc">
                                 </div>
+                              </div>
                             </div>
-                            <div class="col6 floatLeft">
+                            <div class="row">
+
+                              <div class="col6 floatLeft">
                                 <div class="mat-div">
-                                    <label for="curp" class="mat-label">CURP</label>
-                                    <input type="text" class="mat-input" id="curp">
+                                  <label for="curp" class="mat-label">CURP</label>
+                                  <input type="text" class="mat-input" id="curp">
                                 </div>
-                            </div>
-                            <div class="col6 floatLeft">
+                              </div>
+                              <div class="col6 floatLeft">
                                 <span class="select-label">Nacionalidad</span>
                                 <div class="col12 floatLeft">
-                                    <div class="mdl-selectfield">
-                                        <label>Nacionalidad</label>
-                                        <select class="browser-default">
-                                <option value="" disabled selected>Nacionalidad</option>
-                                <option value="1">Mexicana</option>
-                                <option value="2">Extranjera</option>
-                              </select>
-                                    </div>
+                                  <div class="mdl-selectfield">
+                                    <label>Nacionalidad</label>
+                                    <select class="browser-default">
+                                      <option value="" disabled selected>Nacionalidad</option>
+                                      <option value="1">Mexicana</option>
+                                      <option value="2">Extranjera</option>
+                                    </select>
+                                  </div>
                                 </div>
+                              </div>
                             </div>
 
                             <div class="col12 floatLeft paddingTop20">
@@ -650,7 +659,7 @@
                             <div class="col6 floatLeft">
                                 <span class="select-label">Lugar de nacimiento del conyugue</span>
                                 <div class="col12 floatLeft">
-                                  <div class="mdl-selectfield">
+                                  <div class="mdl-selectfield" id="lugar_nacimiento_conyuge">
                                     <label>Lugar de nacimiento</label>
                                     <select class="browser-default">
                                       <option value="" disabled selected>Lugar de nacimiento del conyugue</option>
@@ -811,11 +820,11 @@
                         </div>
                         <div id="ofertas" class="hide col12 floatLeft animated fadeInRight">
                             <h2>Ofertas disponibles</h2>
-                            <div class="promos">
-                              <div id="wrapper_bu">
-                                <div id="bu1">
-                                  <div class="promo">
-                                    <h4>Clásico PF</h4>
+                            <div id="credit-proposals swiper-container">
+                          		<div class="credit-proposals-wrapper swiper-wrapper">
+
+                          			<div class="col-xs-12 promo swiper-slide">
+                                    <h4>PRUEBA1</h4>
                                     <ul class="features">
                                       <li class="brief"><i class="fa fa-male"></i></li>
                                       <li class="price">$50,000
@@ -835,110 +844,98 @@
                                             <li class="requisitos">4. AVAL: 1</li>
                                             <li class="buy"><button>APLICAR</button></li>
                                           </ul>
-                                        </div>
-                                      </div>
-                                      <div id="bu2">
-                                        <div class="promo">
-                                          <h4>Automotriz</h4>
-                                          <ul class="features">
-                                            <li class="brief"><i class="fa fa-car"></i></li>
-                                            <li class="price">$180,000
-                                              <div class="flat-slider" id="flat-slider1"></div>
-                                              <p class="floatLeft marginLeft12 font14 fontWeight500 gray opacity05 paddingTop5">MIN</p>
-                                              <p class="floatRight marginRight12 font14 fontWeight500 gray opacity05 paddingTop5">MAX</p>
-                                            </li>
-                                            <li>
-                                              <h6>PLAZO</h6> 96 QUINCENAS</li>
-                                              <li>
-                                                <h6>PAGO QUINCENAL</h6> $ 600</li>
-                                                <li>
-                                                  <h6>REQUISITOS</h6></li>
-                                                  <li class="requisitos">1. IDENTIFICACIÓN OFICIAL</li>
-                                                  <li class="requisitos">2. COMPROBANTE DE DOMICILIO</li>
-                                                  <li class="requisitos">3. COMPROBANTE DE INGRESOS</li>
-                                                  <li class="requisitos">4. COTIZACIÓN DEL AUTO</li>
-                                                  <li class="requisitos">5. AVALES: 0</li>
-                                                  <li class="buy"><button>APLICAR</button></li>
-                                                </ul>
-                                              </div>
-                                            </div>
-                                            <div id="bu3">
-                                              <div class="promo">
-                                                <h4>Liberate</h4>
-                                                <ul class="features">
-                                                  <li class="brief"><i class="fa fa-money"></i></li>
-                                                  <li class="price">$70,000
-                                                    <div class="flat-slider" id="flat-slider2"></div>
-                                                    <p class="floatLeft marginLeft12 font14 fontWeight500 gray opacity05 paddingTop5">MIN</p>
-                                                    <p class="floatRight marginRight12 font14 fontWeight500 gray opacity05 paddingTop5">MAX</p>
-                                                  </li>
-                                                  <li>
-                                                    <h6>PLAZO</h6> 96 QUINCENAS</li>
-                                                    <li>
-                                                      <h6>PAGO QUINCENAL</h6> $ 600</li>
-                                                      <li>
-                                                        <h6>REQUISITOS</h6></li>
-                                                        <li class="requisitos">1. IDENTIFICACIÓN OFICIAL</li>
-                                                        <li class="requisitos">2. COMPROBANTE DE DOMICILIO</li>
-                                                        <li class="requisitos">3. COMPROBANTE DE INGRESOS</li>
-                                                        <li class="requisitos">4. B.C. CRÉDITO</li>
-                                                        <li class="requisitos">5. AVALES: 0</li>
-                                                        <li class="buy"><button>APLICAR</button></li>
-                                                      </ul>
-                                                    </div>
-                                                  </div>
-                                                  <div id="bu4">
-                                                    <div class="promo">
-                                                      <h4>Automotriz</h4>
-                                                      <ul class="features">
-                                                        <li class="brief"><i class="fa fa-car"></i></li>
-                                                        <li class="price">$180,000
-                                                          <div class="flat-slider" id="flat-slider4"></div>
-                                                          <p class="floatLeft marginLeft12 font14 fontWeight500 gray opacity05 paddingTop5">MIN</p>
-                                                          <p class="floatRight marginRight12 font14 fontWeight500 gray opacity05 paddingTop5">MAX</p>
-                                                        </li>
-                                                        <li>
-                                                          <h6>PLAZO</h6> 96 QUINCENAS</li>
-                                                          <li>
-                                                            <h6>PAGO QUINCENAL</h6> $ 600</li>
-                                                            <li>
-                                                              <h6>REQUISITOS</h6></li>
-                                                              <li class="requisitos">1. IDENTIFICACIÓN OFICIAL</li>
-                                                              <li class="requisitos">2. COMPROBANTE DE DOMICILIO</li>
-                                                              <li class="requisitos">3. COMPROBANTE DE INGRESOS</li>
-                                                              <li class="requisitos">4. COTIZACIÓN DEL AUTO</li>
-                                                              <li class="requisitos">5. AVALES: 0</li>
-                                                              <li class="buy"><button>APLICAR</button></li>
-                                                            </ul>
-                                                          </div>
-                                                        </div>
-                                                        <div id="bu5">
-                                                          <div class="promo">
-                                                            <h4>Automotriz</h4>
-                                                            <ul class="features">
-                                                              <li class="brief"><i class="fa fa-car"></i></li>
-                                                              <li class="price">$180,000
-                                                                <div class="flat-slider" id="flat-slider5"></div>
-                                                                <p class="floatLeft marginLeft12 font14 fontWeight500 gray opacity05 paddingTop5">MIN</p>
-                                                                <p class="floatRight marginRight12 font14 fontWeight500 gray opacity05 paddingTop5">MAX</p>
-                                                              </li>
-                                                              <li>
-                                                                <h6>PLAZO</h6> 96 QUINCENAS</li>
-                                                                <li>
-                                                                  <h6>PAGO QUINCENAL</h6> $ 600</li>
-                                                                  <li>
-                                                                    <h6>REQUISITOS</h6></li>
-                                                                    <li class="requisitos">1. IDENTIFICACIÓN OFICIAL</li>
-                                                                    <li class="requisitos">2. COMPROBANTE DE DOMICILIO</li>
-                                                                    <li class="requisitos">3. COMPROBANTE DE INGRESOS</li>
-                                                                    <li class="requisitos">4. COTIZACIÓN DEL AUTO</li>
-                                                                    <li class="requisitos">5. AVALES: 0</li>
-                                                                    <li class="buy"><button>APLICAR</button></li>
-                                                                  </ul>
-                                                                </div>
-                                                              </div>
-                                                            </div>
+                          			</div>
+                                <div class="col-xs-12 promo swiper-slide">
+                                    <h4>PRUEBA2</h4>
+                                    <ul class="features">
+                                      <li class="brief"><i class="fa fa-male"></i></li>
+                                      <li class="price">$50,000
+                                        <div class="flat-slider" id="flat-slider3"></div>
+                                        <p class="floatLeft marginLeft12 font14 fontWeight500 gray opacity05 paddingTop5">MIN</p>
+                                        <p class="floatRight marginRight12 font14 fontWeight500 gray opacity05 paddingTop5">MAX</p>
+                                      </li>
+                                      <li>
+                                        <h6>PLAZO</h6> 96 QUINCENAS</li>
+                                        <li>
+                                          <h6>PAGO QUINCENAL</h6> $ 600</li>
+                                          <li>
+                                            <h6>REQUISITOS</h6></li>
+                                            <li class="requisitos">1. IDENTIFICACIÓN OFICIAL</li>
+                                            <li class="requisitos">2. COMPROBANTE DE DOMICILIO</li>
+                                            <li class="requisitos">3. COMPROBANTE DE INGRESOS</li>
+                                            <li class="requisitos">4. AVAL: 1</li>
+                                            <li class="buy"><button>APLICAR</button></li>
+                                          </ul>
+                          			</div>
+                                <div class="col-xs-12 promo swiper-slide">
+                                    <h4>PRUEBA3</h4>
+                                    <ul class="features">
+                                      <li class="brief"><i class="fa fa-male"></i></li>
+                                      <li class="price">$50,000
+                                        <div class="flat-slider" id="flat-slider3"></div>
+                                        <p class="floatLeft marginLeft12 font14 fontWeight500 gray opacity05 paddingTop5">MIN</p>
+                                        <p class="floatRight marginRight12 font14 fontWeight500 gray opacity05 paddingTop5">MAX</p>
+                                      </li>
+                                      <li>
+                                        <h6>PLAZO</h6> 96 QUINCENAS</li>
+                                        <li>
+                                          <h6>PAGO QUINCENAL</h6> $ 600</li>
+                                          <li>
+                                            <h6>REQUISITOS</h6></li>
+                                            <li class="requisitos">1. IDENTIFICACIÓN OFICIAL</li>
+                                            <li class="requisitos">2. COMPROBANTE DE DOMICILIO</li>
+                                            <li class="requisitos">3. COMPROBANTE DE INGRESOS</li>
+                                            <li class="requisitos">4. AVAL: 1</li>
+                                            <li class="buy"><button>APLICAR</button></li>
+                                          </ul>
+                          			</div>
+                                <div class="col-xs-12 promo swiper-slide">
+                                    <h4>PRUEBA4</h4>
+                                    <ul class="features">
+                                      <li class="brief"><i class="fa fa-male"></i></li>
+                                      <li class="price">$50,000
+                                        <div class="flat-slider" id="flat-slider3"></div>
+                                        <p class="floatLeft marginLeft12 font14 fontWeight500 gray opacity05 paddingTop5">MIN</p>
+                                        <p class="floatRight marginRight12 font14 fontWeight500 gray opacity05 paddingTop5">MAX</p>
+                                      </li>
+                                      <li>
+                                        <h6>PLAZO</h6> 96 QUINCENAS</li>
+                                        <li>
+                                          <h6>PAGO QUINCENAL</h6> $ 600</li>
+                                          <li>
+                                            <h6>REQUISITOS</h6></li>
+                                            <li class="requisitos">1. IDENTIFICACIÓN OFICIAL</li>
+                                            <li class="requisitos">2. COMPROBANTE DE DOMICILIO</li>
+                                            <li class="requisitos">3. COMPROBANTE DE INGRESOS</li>
+                                            <li class="requisitos">4. AVAL: 1</li>
+                                            <li class="buy"><button>APLICAR</button></li>
+                                          </ul>
+                          			</div>
+                                <div class="col-xs-12 promo swiper-slide">
+                                    <h4>PRUEBA5</h4>
+                                    <ul class="features">
+                                      <li class="brief"><i class="fa fa-male"></i></li>
+                                      <li class="price">$50,000
+                                        <div class="flat-slider" id="flat-slider3"></div>
+                                        <p class="floatLeft marginLeft12 font14 fontWeight500 gray opacity05 paddingTop5">MIN</p>
+                                        <p class="floatRight marginRight12 font14 fontWeight500 gray opacity05 paddingTop5">MAX</p>
+                                      </li>
+                                      <li>
+                                        <h6>PLAZO</h6> 96 QUINCENAS</li>
+                                        <li>
+                                          <h6>PAGO QUINCENAL</h6> $ 600</li>
+                                          <li>
+                                            <h6>REQUISITOS</h6></li>
+                                            <li class="requisitos">1. IDENTIFICACIÓN OFICIAL</li>
+                                            <li class="requisitos">2. COMPROBANTE DE DOMICILIO</li>
+                                            <li class="requisitos">3. COMPROBANTE DE INGRESOS</li>
+                                            <li class="requisitos">4. AVAL: 1</li>
+                                            <li class="buy"><button>APLICAR</button></li>
+                                          </ul>
+                          			</div>
+                              </div>
                             </div>
+
                         </div>
 
                     </div>
@@ -948,12 +945,13 @@
         </div>
     </section>
 
+    <section>
+
+    </section>
+
 
     </div>
     <script src="perfilador.js"></script>
-    <script src="picker.js"></script>
-    <script src="picker.date.js"></script>
-    <script src="jquery.anyslider.min.js"></script>
 
 
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js"></script> -->

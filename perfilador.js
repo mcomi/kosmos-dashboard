@@ -54,23 +54,6 @@ $('#cliente_si').on('click', function() {
   $('#inputNoCliente').removeClass('hide');
 });
 
-// $('#flat-slider1').slider({
-//   orientation: 'horizontal',
-//   range:       false,
-//   value:      100
-// });
-//
-// $('#flat-slider2').slider({
-//   orientation: 'horizontal',
-//   range:       false,
-//   value:      100
-// });
-//
-// $('#flat-slider3').slider({
-//   orientation: 'horizontal',
-//   range:       false,
-//   value:      100
-// });
 
 
 $(".mat-input").focus(function(){
@@ -83,22 +66,7 @@ $(".mat-input").focusout(function(){
   $(this).parent().removeClass("is-active");
 })
 
-function slide() {
-  $('.first').hide();
-  $('.third')
-  .addClass('first')
-  .removeClass('third')
-  .removeClass('scale');
-  //.css({"-webkit-transform":"translateX(-100%)"})
-  setTimeout(function() {
-
-    $('.second')
-    .removeClass('second')
-    .addClass('third')
-    .addClass('scale');
-  },1000)
-
-}
+var swiper = new Swiper('.swiper-container');
 
 $( "select" )
   .each(function() {
@@ -109,6 +77,7 @@ $( "select" )
 
   var Conclave=(function(){
       var buArr =[],arlen;
+      var numPromos = $('.promo').length;
       return {
         init:function(){
           this.addCN();this.clickReg();
@@ -117,6 +86,15 @@ $( "select" )
           var buarr=["holder_bu_awayL2","holder_bu_awayL1","holder_bu_center","holder_bu_awayR1","holder_bu_awayR2"];
           for(var i=1;i<=buarr.length;++i){
             $("#bu"+i).removeClass().addClass(buarr[i-1]+" holder_bu");
+          }
+          if(buarr.length<numPromos){
+            var dif = numPromos-buarr.length;
+            var firstIndexBeforeArrLength = buarr.length+1;
+            while (dif>0) {
+                $("#bu"+firstIndexBeforeArrLength).removeClass().addClass("holder_bu_no_display holder_bu");
+                dif--;
+                firstIndexBeforeArrLength++;
+            }
           }
         },
         clickReg:function(){

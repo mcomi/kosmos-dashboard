@@ -1,6 +1,8 @@
 
 
-
+html,body {
+  overflow: auto;
+}
 
 .stepContent {
   padding-bottom: 30px;
@@ -44,9 +46,7 @@ font-weight: 300;
 }
 .flexer, .progress-indicator {
     display: -webkit-box;
-    display: -moz-box;
     display: -ms-flexbox;
-    display: -webkit-flex;
     display: flex
 }
 
@@ -56,16 +56,16 @@ font-weight: 300;
 
 .no-flexer-element {
     -ms-flex: 0;
-    -webkit-flex: 0;
     -moz-flex: 0;
-    flex: 0
+    -webkit-box-flex: 0;
+            flex: 0
 }
 
 .flexer-element, .progress-indicator>li {
     -ms-flex: 1;
-    -webkit-flex: 1;
     -moz-flex: 1;
-    flex: 1
+    -webkit-box-flex: 1;
+            flex: 1
 }
 
 .progress-indicator {
@@ -242,6 +242,8 @@ font-weight: 300;
 
 .progress-indicator.stacked .stacked-text span.substep {
   margin: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   text-transform: capitalize;
   font-size: 13px;
@@ -346,7 +348,7 @@ z-index: 100;
 .mat-input:focus         { outline:none; }
 
 .mat-div {
-  padding: 19px 0 0 0;
+  padding: 21px 0 0 0; /* 19px pero IE no se ve bien*/
   position: relative;
 }
 
@@ -417,8 +419,13 @@ select:focus {
 
 .mdl-selectfield {
   position: relative;
+  padding-top: 29px;
+}
+
+#lugar_nacimiento, #lugar_nacimiento_conyuge {
   padding-top: 27px;
 }
+
 .mdl-selectfield:after {
   position: absolute;
   top: 2em;
@@ -467,7 +474,7 @@ select:focus {
     /*display: inline;
     float: left;
     width: 33.333%;*/
-    margin: 2em 0 0;
+    margin: 2em 0.5em 0;
   }
   .promo.first {
     border-right: none;
@@ -576,6 +583,8 @@ border-top: 1px solid gray;
 .flat-slider.ui-slider-horizontal .ui-slider-handle {
   top: 50% !important;
   margin-top: -7.5px !important;
+  width: 15px !important;
+  height: 15px !important;
 }
 
 .flat-slider.ui-slider-vertical .ui-slider-handle {
@@ -722,6 +731,33 @@ border-top: 1px solid gray;
   transition: width 1s, height 1s, top 1s, left 1s
 }
 
+.holder_bu_no_display {
+  display: none;
+}
+
+.swiper-container {
+	width: 100%;
+	margin: 20px auto;
+}
+
+.swiper-wrapper {
+	overflow-x: scroll;
+	overflow-y: hidden;
+	-ms-overflow-style: none;
+	/* Hides the scrollbar. */
+	-ms-scroll-chaining: none;
+	/* Prevents Metro from swiping to the next tab or app. */
+	-ms-scroll-snap-type: mandatory;
+	/* Forces a snap scroll behavior on your images. */
+	-ms-scroll-snap-points-x: snapInterval(0%, 100%);
+	/* Defines the y and x intervals to snap to when scrolling. */
+}
+
+.swiper-slide {
+	width: 80%;
+      height: 300px;
+}
+
 
 @media (min-width: 40em) {
   .holder_bu_center .promo {
@@ -732,12 +768,78 @@ border-top: 1px solid gray;
   .scale .price {
     color: #005398;
   }
+  .swiper-slide {
+  	width: 42%;
+  }
 }
 
 
 
-@media handheld, screen and (max-width:400px) {
+@media screen and (max-width:420px) {
     .progress-indicator {
         font-size: 60%
     }
+    #perfilador-desktop .container {
+      margin-left: 15px;
+margin-right: 15px;
+    }
+    #perfilador-desktop .col3,
+    #perfilador-desktop .col4,
+    #perfilador-desktop .col8,
+    #perfilador-desktop .col2,
+    #perfilador-desktop .col1 {
+      width: 100%;
+      display: block;
+    }
+
+    #buro.col12 {
+      width: 95%;
+    }
+
+    #perfilador-desktop .col6 {
+      width: 100%;
+      display: block;
+    }
+
+    .mat-div:after, .mat-div:before {
+      width: 90%
+    }
+
+    #perfilador-desktop .col9 {
+      width: 100%;
+      display: block;
+    }
+
+    .progress-indicator.stacked {
+   display: flex;
+}
+.progress-indicator.stacked>li .bubble:after, .progress-indicator.stacked>li .bubble:before {
+    left: 10px;
+    margin-left: -1.5px;
+    width: 100%;
+    height: 3px;
+    top: 10px;
+}
+.progress-indicator.stacked .stacked-text span.substep{
+  display: none;
+}
+
+.progress-indicator.stacked .stacked-text {
+    position: relative;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    /* margin-left: 0; */
+    width: 67%!important;
+    display: inline-block;
+    /* text-align: left; */
+    /* line-height: 1.2em; */
+}
+
+.progress-indicator .completed .bubble i {
+    display: block;
+    font-size: 14px;
+}
+
+
 }
